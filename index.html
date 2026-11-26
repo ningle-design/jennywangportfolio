@@ -37,9 +37,14 @@ nav.dark .cta{background:#fff;color:var(--ink)}
 .sp{flex:1 1 0}
 .sp1{min-height:80px}
 .sp2{flex-grow:1.5;min-height:64px}
-.module{display:flex;flex-direction:column;width:100%;max-width:min(100%,35vw)}
-.h1{font-family:var(--font-heading,'Fraunces',Georgia,serif);font-weight:300;font-size:clamp(1.6rem,min(3.8vw,6.4vh),3.8rem);line-height:1.08;letter-spacing:-.035em;color:var(--ink);min-height:1em;margin-bottom:.16em}
-.h1 b{font-weight:700}
+.module{display:flex;flex-direction:column;width:100%;max-width:min(100%,40vw)}
+.h1{font-family:var(--font-heading,'Fraunces',Georgia,serif);font-weight:400;font-size:clamp(1.7rem,min(4.2vw,7vh),4.2rem);line-height:1.08;letter-spacing:-.02em;color:var(--ink);min-height:1em;margin-bottom:.16em}
+.h1 b{font-weight:400;font-style:italic;color:#DB5A7D}
+.ln2{display:block;overflow:hidden;padding:0 .12em .16em 0;margin:0 -.12em -.16em 0}
+.ln2 i{display:block;font-style:normal;transform:translateY(110%);animation:lnup 1.1s var(--expo) var(--d) forwards}
+@keyframes lnup{to{transform:none}}
+.h1.rose .ln2{overflow:visible}
+@media(prefers-reduced-motion:reduce){.ln2 i{animation-duration:.01s;animation-delay:0s}}
 .h1 .st{color:#BCC5D8;font-family:var(--font-body,'DM Sans',Arial,sans-serif);font-weight:400;letter-spacing:.02em}
 .sub{max-width:500px;font-size:clamp(.74rem,min(.92rem,1.9vh),.92rem);line-height:1.7;color:var(--muted);margin:clamp(10px,2vh,16px) 0 0}
 .btns{display:flex;gap:12px;flex-wrap:wrap}
@@ -122,6 +127,8 @@ nav.dark .cta{background:#fff;color:var(--ink)}
 .wgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:56px 44px;perspective:1400px}
 .wi{--p:0;cursor:pointer;display:block}
 .wi.hide{display:none}
+.wempty{font-family:var(--font-heading,'Fraunces',Georgia,serif);font-style:italic;font-size:1.3rem;color:rgba(10,35,115,.6);padding:56px 0;text-align:center}
+.wempty[hidden]{display:none}
 .wcard{position:relative;aspect-ratio:3/2;border-radius:3.2% / 4.8%;overflow:hidden;
   transform-origin:50% 100%;
   transform:rotateX(calc((1 - var(--p))*42deg)) translateY(calc((1 - var(--p))*90px)) scale(calc(.92 + var(--p)*.08));
@@ -130,8 +137,9 @@ nav.dark .cta{background:#fff;color:var(--ink)}
   transition:translate .5s var(--expo),box-shadow .5s;will-change:transform}
 .wi:hover .wcard{translate:0 -10px;box-shadow:0 36px 56px -22px rgba(10,35,115,.45),0 8px 18px -8px rgba(10,35,115,.2)}
 .wmeta{display:flex;justify-content:space-between;gap:12px;margin-top:18px;opacity:calc(var(--p)*1);font-size:.82rem}
-.wmeta b{font-family:var(--font-heading,'Fraunces',Georgia,serif);font-weight:300;font-size:1.1rem;display:block}
-.wmeta span{color:rgba(10,35,115,.55);letter-spacing:.06em;text-transform:uppercase;font-size:.68rem}
+.wmeta b{font-family:var(--font-heading,'Fraunces',Georgia,serif);font-weight:300;font-size:1.1rem;display:block;margin-bottom:12px}
+.wmeta span+span{margin-top:6px}
+.wmeta span{display:block;color:rgba(10,35,115,.55);letter-spacing:.06em;text-transform:uppercase;font-size:.68rem}
 .wmeta em{font-style:normal;color:rgba(10,35,115,.55);font-family:var(--font-body,'DM Sans',Arial,sans-serif);font-size:.74rem}
 
 /* leaves that sprout around a card on hover */
@@ -194,7 +202,7 @@ nav.dark .cta{background:#fff;color:var(--ink)}
 .wc-pink{width:62%;aspect-ratio:1;right:-30%;top:-6%;background:radial-gradient(circle,rgba(244,168,156,.85),rgba(244,168,156,0) 68%)}
 .wc-blue{width:78%;aspect-ratio:1;left:-34%;bottom:-16%;background:radial-gradient(circle,rgba(141,183,213,.75),rgba(141,183,213,0) 68%)}
 .portrait.in .wc{opacity:1;transform:none}
-.sprout{position:absolute;width:64px;left:-34px;bottom:-22px;transform-origin:55% 100%;transform:scale(0) rotate(-20deg);transition:transform 1s cubic-bezier(.3,1.6,.4,1) 1.3s}
+.sprout{position:absolute;width:78px;height:auto;left:-36px;bottom:-26px;pointer-events:none;transform-origin:55% 100%;transform:scale(0) rotate(-20deg);transition:transform 1s cubic-bezier(.3,1.6,.4,1) 1.3s}
 .portrait.in .sprout{transform:none;animation:lfsway 3.4s ease-in-out 2.4s infinite}
 .about-r h2{font-family:var(--font-heading,'Fraunces',Georgia,serif);font-weight:400;letter-spacing:-.02em;font-size:clamp(2.4rem,4.4vw,4rem);line-height:1.05;color:var(--ink);margin-bottom:28px}
 .about-r h2 em{color:#DB5A7D}
@@ -314,6 +322,36 @@ footer{background:var(--moss);color:rgba(255,255,255,.5);text-align:center;font-
 .cs-sec>h2{font-family:var(--font-heading,'Fraunces',Georgia,serif);font-weight:400;letter-spacing:-.02em;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--ink);line-height:1.1;margin-bottom:28px}
 .cs-sec>h2 em{color:#DB5A7D}
 .cs-sec>p{max-width:720px;color:#0A4F98;font-size:var(--type-body,1.0625rem);line-height:1.85}
+.cs-shot.cover{max-width:1000px}
+.cs-cover .pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.cs-cover{background:#0A2373;position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;box-shadow:0 30px 50px -34px rgba(10,35,115,.45)}
+.cs-facts{display:grid;grid-template-columns:1fr 1.15fr 1.25fr 1.5fr .8fr;gap:22px 24px;background:#fff;border-radius:22px;padding:30px 38px;margin-top:-40px;position:relative;z-index:2;box-shadow:0 26px 44px -30px rgba(10,35,115,.35)}
+.cs-facts label{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(10,35,115,.55);margin-bottom:6px}
+.cs-facts strong{font-weight:500;color:var(--ink);font-size:1rem;line-height:1.35}
+.cs-facts strong.big{font-family:var(--font-heading,'Fraunces',Georgia,serif);font-weight:400;font-size:2rem;line-height:1;color:#DB5A7D}
+.cs-facts+.cs-sec{margin-top:80px}
+.cs-sec>p+p{margin-top:16px}
+.cs-role.list{grid-template-columns:1fr;gap:18px}
+.cs-role .cs-sub{font-weight:500;color:var(--ink);font-size:1rem;letter-spacing:.02em;line-height:1.5;margin:0 0 14px}
+.cs-role .cs-list li{padding:14px 0;grid-template-columns:200px 1fr}
+.cs-role .cs-list li:last-child{border-bottom:0}
+@media(max-width:700px){.cs-role .cs-list li{grid-template-columns:1fr}}
+.cs-list{list-style:none;border-top:1px solid rgba(10,79,152,.16)}
+.cs-list li{display:grid;grid-template-columns:210px 1fr;gap:6px 28px;padding:18px 0;border-bottom:1px solid rgba(10,79,152,.16);color:#0A4F98;font-size:var(--type-body,1.0625rem);line-height:1.75}
+.cs-list b{font-weight:500;color:var(--ink);display:flex;gap:10px;align-items:flex-start}
+.cs-list b::before{content:"";flex:none;width:16px;height:16px;margin-top:.42em;background:#D98592;-webkit-mask:var(--petal) center/contain no-repeat;mask:var(--petal) center/contain no-repeat}
+@media(max-width:700px){.cs-list li{grid-template-columns:1fr}}
+.cs-sec>p.cs-sub{font-weight:500;color:var(--ink);font-size:1rem;letter-spacing:.02em;margin:-8px 0 20px}
+.cs-media{grid-column:2/-1;display:grid;gap:14px;margin-top:10px}
+.cs-media.m2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cs-media.m4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.cs-media figure{margin:0;display:flex;flex-direction:column;gap:8px}
+.cs-media img{display:block;width:100%;height:auto;border-radius:12px;box-shadow:0 18px 30px -22px rgba(10,35,115,.4)}
+.cs-media figcaption{font-size:.78rem;color:rgba(10,35,115,.6)}
+.cs-media.m1 figure.miss{aspect-ratio:16/6}
+.cs-media figure.miss{aspect-ratio:4/3;justify-content:center;align-items:center;text-align:center;padding:14px;background:rgba(255,255,255,.65);border:1px dashed rgba(10,79,152,.28);border-radius:12px}
+.cs-media figure.miss img{display:none}
+@media(max-width:900px){.cs-facts{grid-template-columns:1fr 1fr}.cs-media figure.miss{aspect-ratio:16/10}.cs-media.m4{grid-template-columns:repeat(2,minmax(0,1fr))}.cs-facts{padding:26px 28px}}
 .cs-dec{border-top:1px solid rgba(10,79,152,.16)}
 .cs-dec>div{display:grid;grid-template-columns:90px minmax(0,.8fr) minmax(0,1.2fr);gap:32px;padding:38px 0;border-bottom:1px solid rgba(10,79,152,.16)}
 .cs-dec .n{font-family:var(--font-heading,'Fraunces',Georgia,serif);font-style:italic;font-size:1.6rem;color:#DB5A7D}
@@ -323,6 +361,12 @@ footer{background:var(--moss);color:rgba(255,255,255,.5);text-align:center;font-
 .cs-out>div{background:#fff;border-radius:20px;padding:30px 28px;box-shadow:0 24px 40px -30px rgba(10,35,115,.3)}
 .cs-out b{display:block;font-family:var(--font-heading,'Fraunces',Georgia,serif);font-weight:400;font-size:1.2rem;line-height:1.3;color:var(--ink);margin-bottom:12px}
 .cs-out span{color:#0A4F98;line-height:1.75;font-size:.98rem}
+.cs-out.one{grid-template-columns:1fr}
+.cs-out .stat{display:flex;align-items:center;gap:28px;padding:34px 40px}
+.cs-out .stat::before{display:none}
+.cs-out .stat strong{font-family:var(--font-heading,'Fraunces',Georgia,serif);font-weight:400;font-size:clamp(3rem,6vw,4.8rem);line-height:1;color:#DB5A7D;letter-spacing:-.02em}
+.cs-out .stat span{font-size:1.15rem;line-height:1.5;color:var(--ink);max-width:22em}
+@media(max-width:560px){.cs-out .stat{flex-direction:column;align-items:flex-start;gap:12px}}
 .cs-out>div::before{content:"";display:block;width:26px;height:26px;margin-bottom:18px;background:#D98592;-webkit-mask:var(--petal) center/contain no-repeat;mask:var(--petal) center/contain no-repeat}
 :root{--petal:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 2a3.2 3.2 0 0 1 3.2 3.2c0 .8-.3 1.5-.8 2.1.6-.5 1.3-.8 2.1-.8a3.2 3.2 0 0 1 0 6.4c-.8 0-1.5-.3-2.100-.8.5.6.8 1.3.8 2.100a3.200 3.200 0 0 1-6.400 0c0-.8.3-1.5.8-2.1-.6.5-1.3.8-2.1.8a3.2 3.2 0 0 1 0-6.4c.8 0 1.5.3 2.1.8-.5-.6-.8-1.3-.8-2.1A3.2 3.2 0 0 1 10 2Z'/%3E%3C/svg%3E")}
 @media(max-width:900px){.cs-role{grid-template-columns:1fr;gap:14px;padding:28px}.cs-dec>div{grid-template-columns:44px 1fr;gap:10px 16px}.cs-dec p{grid-column:2}.cs-out{grid-template-columns:1fr}.cs-hero{padding-top:110px}.cs-role{margin-top:-36px}.cs-sec{margin-top:72px}}
@@ -355,7 +399,7 @@ footer{background:var(--moss);color:rgba(255,255,255,.5);text-align:center;font-
       <p class="sub in-up" style="transition-delay:1.0s">A communications professional working across strategic communications, project coordination and visual design. I turn ideas into clear messages, engaging visuals and creative projects, helping people and initiatives connect with audiences and create meaningful impact.</p>
       <div class="mods">
         <div class="chip c1 in-up" style="transition-delay:1.2s"><i></i><div><b>Based in Sweden</b><span>Open for projects</span></div></div>
-        <div class="chip c2 in-up" style="transition-delay:1.4s"><i></i><div><b>Growing this season</b><span><u>Events &amp; Experiences&nbsp;·</u> <u>AI-powered Creation&nbsp;·</u> <u>Nature &amp; Storytelling</u></span></div></div>
+        <div class="chip c2 in-up" style="transition-delay:1.4s"><i></i><div><b>Growing this season</b><span><u>Events &amp; Experiences&nbsp;·</u> <u>AI-powered Creation&nbsp;·</u> <u>Production &amp; Storytelling</u></span></div></div>
       </div>
     </div>
     <div class="sp sp2" aria-hidden="true"></div>
@@ -376,6 +420,7 @@ footer{background:var(--moss);color:rgba(255,255,255,.5);text-align:center;font-
     <div class="pills" id="pills"></div>
   </div>
   <div class="wgrid" id="wgrid"></div>
+  <p class="wempty" id="wempty" hidden></p>
 </section>
 
 <section class="about" id="about">
@@ -384,18 +429,12 @@ footer{background:var(--moss);color:rgba(255,255,255,.5);text-align:center;font-
       <span class="wc wc-pink"></span><span class="wc wc-blue"></span>
       <div class="arch-line"></div>
       <div class="arch"><img src="portrait.webp" alt="Portrait of Jenny Wang" width="480" height="600" loading="lazy"></div>
-      <svg class="sprout" viewBox="0 0 40 44" fill="none" aria-hidden="true">
-        <defs><linearGradient id="yl1" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#EDA20A"/><stop offset="1" stop-color="#F8DFA3"/></linearGradient>
-        <linearGradient id="yl2" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#F2B52E"/><stop offset="1" stop-color="#FBE9B8"/></linearGradient></defs>
-        <path d="M22 42C22 32 21 24 20 14" stroke="#B97800" stroke-width="1.6" stroke-linecap="round"/>
-        <path d="M21 30C11 31 4 25 3 15c11-1 18 5 18 15Z" fill="url(#yl1)"/>
-        <path d="M21 22C22 11 29 5 38 5c1 11-6 18-17 17Z" fill="url(#yl2)"/>
-      </svg>
+      <img class="sprout" src="sunflower-sprout.webp" alt="" aria-hidden="true" width="190" height="217" loading="lazy">
     </figure>
   </div>
   <div class="about-r">
     <h2>Making ideas <em>bloom</em></h2>
-    <p>I’m Jenny Wang, a digital communicator and designer based in Sweden. I help people turn complex ideas into creative stories, clean websites and engaging events that bring people together. I combine communication strategy, visual design and project coordination to bring those ideas to life.</p>
+    <p>I’m Jenny Wang, a digital communicator and designer based in Sweden. I combine communication strategy, visual design and project coordination to turn complex ideas into stories people can relate to, websites they can easily use and events where they can connect. I’m drawn to projects that bring people together to make a difference in their communities and in everyday life.</p>
     <p>Outside work, I travel with a camera and grow vegetables in my garden. I love coming back to the same patch of soil and seeing what’s changed since last week.</p>
     <h3 class="sup-h">I can support you with</h3>
     <ul class="sup">
@@ -407,7 +446,7 @@ footer{background:var(--moss);color:rgba(255,255,255,.5);text-align:center;font-
 </section>
 
 <section class="contact" id="contact">
-  <h2>Let's grow an idea to <em>bloom</em></h2>
+  <h2>Let's grow an idea <em>together</em>!</h2>
   <div class="mail"><span id="mailtxt">jennywang.work@gmail.com</span><button id="copy">Copy</button></div>
   <div class="links"><a href="https://www.linkedin.com/in/jennywangprofile/" target="_blank" rel="noopener">LinkedIn</a></div>
 </section>
@@ -456,7 +495,14 @@ const PROJECTS = [
       name:"ERI Website Redesign",
       title:"Rebuilding ERI’s website around its climate work and resources",
       overview:"A full WordPress rebuild that introduced a new visual identity across the site and reorganised how visitors learn about ERI’s climate work and find practical resources.",
-      role:"I developed the website’s visual identity, including its colour palette and banner system, designed the page layouts, and rebuilt every page in WordPress. My manager and I worked together to define the site structure. My colleague wrote the website copy.",
+      roleSub:"Web Designer · WordPress Developer",
+      roleItems:[
+        {l:"Website visual identity",t:"Developed the colour palette and banner system for the redesigned site."},
+        {l:"Information architecture",t:"Worked with my manager to define the site structure, including the homepage hierarchy and main navigation."},
+        {l:"Page design",t:"Designed layouts across the site, including a dedicated Resources hub organised around the pillars of ERI’s Business Playbook."},
+        {l:"Resource artwork",t:"Designed and created cover images for selected ERI resources."},
+        {l:"WordPress development",t:"Rebuilt every page in WordPress, implementing the new visual identity and layouts across the site."}
+      ],
       challenge:"The previous homepage brought different types of information together without a clear hierarchy, and its imagery did little to reflect ERI’s identity. Resources were spread across separate pages and linked from the main navigation, where their categories were difficult to distinguish. The redesign needed to give first-time visitors a clear overview of ERI’s work and help people with a specific resource in mind reach it directly.",
       decisions:[
         {h:"Build a consistent visual identity across the site",p:"I developed a new colour palette and banner system to give pages a consistent visual opening. I designed the layouts around the content and purpose of each page, then implemented the visual system across the site in WordPress."},
@@ -469,12 +515,37 @@ const PROJECTS = [
         {b:"Two ways to find resources.",t:"Visitors can use the main navigation to reach key resource pages directly or browse the full collection by Business Playbook pillar in the Resources hub."}
       ]
     } },
-  { slug:"northlight-festival", title:"Northlight Festival", category:"Print", year:2025, place:"Reykjavík, Iceland",
-    client:"Northlight", role:"Poster series, programme", ink:"#fff", sh:0.25,
-    pal:["#DCE8F2","#1260B0","#0A2373","#8DB7D5"],
-    desc:"A six-piece poster series and 48-page printed programme for a midwinter light festival. Layered transparency, glowing colour and handset type echo the festival's installations.\n\nA limited palette of deep indigo, electric cyan and warm white prints on uncoated stock for a soft, almost luminous feel." },
+  { slug:"t11-terminal", title:"T11 Terminal | 14th CSSA Stockholm Singles' Day", category:"Event", label:"Event Production &amp; Art Direction", sub:"CSSA Sweden · 130+ attendees", year:2026, place:"Homage, Stockholm",
+    client:"CSSA Sweden", role:"Event production, art direction", bg:"#DCE8F2", cover:true, coverImg:"t11/hero.webp",
+    ink:"#fff", sh:0.2, pal:["#DCE8F2","#1260B0","#0A2373","#8DB7D5"],
+    desc:"An airport-terminal-themed singles party for more than 130 attendees, from concept and promotion to on-site delivery.",
+    story:{
+      name:"T11 Terminal · Stockholm Chinese Students and Scholars Singles Party",
+      eye:"T11 Terminal | 14th CSSA Stockholm Singles' Day",
+      title:"A singles night with room for friendship",
+      overview:"An immersive, airport-themed social event that brought together more than 130 Chinese students and scholars in Stockholm and gave guests a natural way to starting a conversation through a shared storyline and team challenges at the gates.",
+      alt:"T11 Terminal event artwork",
+      facts:[{l:"Organiser",v:"CSSASE"},{l:"Date",v:"7 November 2026"},{l:"Location",v:"Homage, Stockholm"},{l:"My role",v:"Event Production Lead · Art Director · Co-host"},{l:"Attendees",v:"130+",big:1}],
+      challenge:"The 14th Stockholm Chinese Students and Scholars Singles' Day Party set out to give guests a relaxed way to meet new people, whether they were looking for friendship or romance. Observations from previous events, attendee feedback informed two priorities: giving strangers a natural way to start talking and helping them meet people beyond their initial groups. At this scale, the programme also needed to encourage everyone to actively participate in the evening.",
+      roleSub:"Event Production Lead · Art Director · Co-host",
+      roleItems:[
+        {l:"Event production",t:"Led planning and on-site delivery, managed the budget, timeline and promotional plan, and ran planning meetings, staff recruitment and training for in-character volunteers."},
+        {l:"Programme design",t:"Developed the storyline and game rules, drafted the running order, and refined the programme with the team."},
+        {l:"Art direction",t:"Built on a teammate’s airport theme and teaser concept, guiding the visual direction and co-designing the poster, boarding passes, teaser and props."},
+        {l:"Live hosting",t:"Wrote the host scripts and co-hosted the event."}
+      ],
+      decisions:[
+        {h:"A natural way into the conversation",p:"We designed the gate activities around groups of ten. A lateral-thinking puzzle and a round of Truth or Dare gave guests a shared starting point, with each person taking a turn to speak.",
+          media:[{src:"t11/gate.webp",cap:"Gate activity on the night"},{src:"t11/gate-flow.webp",cap:"Gate activity flow"}]},
+        {h:"Give guests a reason to meet across groups",p:"A second puzzle was designed to ask guests to form new teams of three across flight routes. To solve it, they had to exchange clues, giving them a concrete reason to approach people outside their original groups.",
+          media:[{src:"t11/puzzle.webp",cap:"Cross-route team puzzle"}]}
+      ],
+      outcomes:[
+        {big:"98%",t:"of respondents said they made a new friend at T11."}
+      ]
+    } },
 ];
-const CATS=['All',...new Set(PROJECTS.map(p=>p.category))];
+const CATS=[...new Set(['All',...PROJECTS.map(p=>p.category),'Branding','Event'])];
 
 /* ════════════════ helpers ════════════════ */
 const $ = (s,r=document)=>r.querySelector(s);
@@ -512,7 +583,10 @@ function pic(p,v){
   const crop={0:'object-fit:contain',1:'object-fit:cover;object-position:0 25%;transform:scale(1.9);transform-origin:12% 30%',2:'object-fit:cover;object-position:100% 70%;transform:scale(2.2);transform-origin:90% 75%',3:'object-fit:cover;object-position:50% 40%;transform:scale(1.5);transform-origin:50% 45%'}[v];
   return `<img src="${p.img}" alt="" style="position:absolute;inset:0;width:100%;height:100%;${crop}">`;
 }
+function coverHTML(p){return `<img class="pimg" src="${p.coverImg}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">`}
+function mediaHTML(items){return `<div class="cs-media m${items.length}">`+items.map(m=>`<figure><img src="${m.src}" alt="${m.cap}" loading="lazy" onerror="this.parentNode.classList.add('miss')"><figcaption>${m.cap}</figcaption></figure>`).join('')+'</div>'}
 function face(p){
+  if(p.cover) return `<div class="face" style="background:${p.bg}">${coverHTML(p)}</div>`;
   if(p.img) return `<div class="face" style="background:${p.bg}"><img class="pimg" src="${p.img}" alt="${p.title} website redesign shown on desktop, tablet and phone" loading="eager"></div>`;
   return `<div class="face" style="--ci:${p.ink};--sh:${p.sh}">${art(p)}<div class="shade"></div><div class="sheen"></div>
     <div class="mark">${STAR}<span>jenny.w</span></div>
@@ -555,10 +629,11 @@ let rz; addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(fixH1,150)
 function intro(){
   fixH1();
   document.body.classList.add('go');
-  scramble($('#h1'),[{t:'Designer of things\nthat '},{t:'grow',cls:'b'}],{delay:350,dur:1300,done(){
-    $('#h1').innerHTML='Designer of things<br>that <b class="gw">grow<svg viewBox="0 0 100 12" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M1 8C28 2 72 2 99 7" stroke="#F4A89C" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></b>';
-    const sv=$('#h1 .gw svg'); requestAnimationFrame(()=>requestAnimationFrame(()=>sv.classList.add('on')));
-  }});
+  const UL='<svg viewBox="0 0 100 12" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M1 8C28 2 72 2 99 7" stroke="#F4A89C" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>';
+  const h=$('#h1');
+  h.innerHTML='<span class="ln2"><i style="--d:.35s">Designer of things</i></span><span class="ln2"><i style="--d:.55s">that <b class="gw">grow'+UL+'</b></i></span>';
+  const sv=$('#h1 .gw svg');
+  setTimeout(()=>{sv.classList.add('on');h.classList.add('rose')},1750);
 }
 window.addEventListener('load',()=>setTimeout(intro,120));
 
@@ -567,16 +642,17 @@ window.addEventListener('load',()=>setTimeout(intro,120));
 
 /* ════════════════ WORK GRID (scroll-linked tilt) ════════════════ */
 let active='All';
-const pills=$('#pills'), wgrid=$('#wgrid');
+const pills=$('#pills'), wgrid=$('#wgrid'), wempty=$('#wempty');
 CATS.forEach(c=>{
   const b=document.createElement('button'); b.className='pill'+(c==='All'?' on':''); b.textContent=c==='All'?'All work':c;
   b.onclick=()=>{active=c;[...pills.children].forEach(x=>x.classList.toggle('on',x===b));
-    wgrid.querySelectorAll('.wi').forEach(w=>w.classList.toggle('hide',!(c==='All'||w.dataset.cat===c)));update()};
+    wgrid.querySelectorAll('.wi').forEach(w=>w.classList.toggle('hide',!(c==='All'||w.dataset.cat===c)));
+    const none=!wgrid.querySelector('.wi:not(.hide)'); wempty.hidden=!none; wempty.textContent=none?'New '+c.toLowerCase()+' projects are growing — coming soon.':'';update()};
   pills.appendChild(b);
 });
 PROJECTS.forEach(p=>{
   const a=document.createElement('a'); a.className='wi'; a.dataset.cat=p.category;
-  a.innerHTML=`<div class="leaves" aria-hidden="true"></div><div class="wcard">${face(p)}</div><div class="wmeta"><div><b>${p.title}</b><span>${p.label||p.category}</span></div><em>${p.year}</em></div>`;
+  a.innerHTML=`<div class="leaves" aria-hidden="true"></div><div class="wcard">${face(p)}</div><div class="wmeta"><div><b>${p.title}</b><span>${p.label||p.category}</span>${p.sub?`<span>${p.sub}</span>`:''}</div><em>${p.year}</em></div>`;
   a.addEventListener('click',()=>openDetail(p,$('.wcard',a)));
   wgrid.appendChild(a);
 });
@@ -651,24 +727,31 @@ document.addEventListener('pointerover',e=>{
 const detail=$('#detail'), morph=$('#morph'), back=$('#back');
 let lastRect=null;
 
+function roleList(t){return (t.roleSub?`<p class="cs-sub">${t.roleSub}</p>`:'')+`<ul class="cs-list">${t.roleItems.map(x=>`<li><b>${x.l}</b><span>${x.t}</span></li>`).join('')}</ul>`}
 function storyHTML(p){
-  const t=p.story;
+  const t=p.story, paras=x=>x.split('\n\n').map(q=>`<p>${q}</p>`).join('');
+  const shot=p.cover?`<div class="cs-shot cover"><div class="cs-cover">${coverHTML(p)}</div></div>`
+    :`<div class="cs-shot"><img src="${p.img}" alt="${t.name}: the redesigned ERI website shown on desktop, tablet and mobile"></div>`;
+  const facts=t.facts?`<div class="cs-facts">${t.facts.map(f=>`<div><label>${f.l}</label><strong${f.big?' class="big"':''}>${f.v}</strong></div>`).join('')}</div>`:'';
+  const role=t.facts?`<section class="cs-sec"><h2>My <em>role</em></h2>${t.roleItems?roleList(t):paras(t.role)}</section>`:'';
+  const chal=`<section class="cs-sec"><h2>The challenge</h2><p>${t.challenge}</p></section>`;
   return `<section class="cs-hero" style="background:${p.bg}"><div class="cs-in">
-      <div class="cs-eye"><i></i>${t.name} · ${p.year}</div>
+      <div class="cs-eye"><i></i>${t.eye||t.name+' · '+p.year}</div>
       <h1 class="cs-title">${t.title}</h1>
       <p class="cs-over">${t.overview}</p></div>
-      <div class="cs-shot"><img src="${p.img}" alt="${t.name}: the redesigned ERI website shown on desktop, tablet and mobile"></div></section>
+      ${shot}</section>
     <div class="cs-body">
-      <div class="cs-role"><h2>My role</h2><p>${t.role}</p></div>
-      <section class="cs-sec"><h2>The challenge</h2><p>${t.challenge}</p></section>
-      <section class="cs-sec"><h2>Key design <em>decisions</em></h2><div class="cs-dec">${t.decisions.map((d,i)=>`<div><span class="n">0${i+1}</span><h3>${d.h}</h3><p>${d.p}</p></div>`).join('')}</div></section>
-      <section class="cs-sec"><h2>Outcomes</h2><div class="cs-out">${t.outcomes.map(o=>`<div><b>${o.b}</b><span>${o.t}</span></div>`).join('')}</div></section>
+      ${facts}
+      ${t.facts?'':`<div class="cs-role${t.roleItems?' list':''}"><h2>My role</h2>${t.roleItems?`<div>${roleList(t)}</div>`:`<p>${t.role}</p>`}</div>`}
+      ${chal}${role}
+      <section class="cs-sec"><h2>Key <em>decisions</em></h2><div class="cs-dec">${t.decisions.map((d,i)=>`<div><span class="n">0${i+1}</span><h3>${d.h}</h3><p>${d.p}</p>${d.media?mediaHTML(d.media):''}</div>`).join('')}</div></section>
+      <section class="cs-sec"><h2>${t.outcomes.length>1?'Outcomes':'Outcome'}</h2><div class="cs-out${t.outcomes.length===1?' one':''}">${t.outcomes.map(o=>o.big?`<div class="stat"><strong>${o.big}</strong><span>${o.t}</span></div>`:`<div><b>${o.b}</b><span>${o.t}</span></div>`).join('')}</div></section>
     </div>`;
 }
 function openDetail(p,el){
   cl.classList.remove('on');
   const r=el.getBoundingClientRect(); lastRect=r;
-  morph.style.background=p.bg||''; morph.innerHTML=p.img?pic(p,0):art(p);
+  morph.style.background=p.bg||''; morph.innerHTML=p.cover?coverHTML(p):p.img?pic(p,0):art(p);
   Object.assign(morph.style,{display:'block',transition:'none',left:r.left+'px',top:r.top+'px',width:r.width+'px',height:r.height+'px',borderRadius:'8px'});
   const story=!!p.story; $('#dhero').style.display=story?'none':''; document.querySelector('.d-body').style.display=story?'none':''; const ds=$('#dstory'); ds.style.display=story?'block':'none'; if(story){ds.innerHTML=storyHTML(p)}
   $('#dhero').classList.toggle('light',!!p.img); $('#dhero').style.background=p.bg||''; $('#dart').style.background=''; $('#dart').innerHTML=p.img?pic(p,0):art(p,1).replace('class="art"','class="art" style="position:absolute;inset:0;width:100%;height:100%"');
