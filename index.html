@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jenny Wang — Digital Communicator & Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FDF3E6; --paper:#FFFAF3; --cream:#F4E6D0;
+  --moss:#0A4F98; --olive:#1260B0; --sage:#8DB7D5; --bark:#B97800; --butter:#EDA20A;
+  --coral:#F4A89C; --leaf:#2A4426;
+  --ink:#0A2373; --text:#0A2373; --muted:#5A6788;
+  --expo:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+
+/* ───────── NAV ───────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 5vw;transition:background .4s,color .4s,box-shadow .4s,padding .4s var(--expo)}
+nav.dark{color:#fff}
+nav.scrolled{background:rgba(253,243,230,.68);-webkit-backdrop-filter:blur(20px) saturate(1.4);backdrop-filter:blur(20px) saturate(1.4);box-shadow:0 1px 0 rgba(255,255,255,.4);padding-top:12px;padding-bottom:12px}
+.logo{font-family:'Fraunces',serif;font-weight:300;font-size:1.05rem;letter-spacing:.02em;color:inherit;text-decoration:none}
+.nav-r{display:flex;align-items:center;gap:30px}
+.nav-r a{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:inherit;opacity:.65;text-decoration:none;transition:opacity .2s}
+.nav-r a:hover{opacity:1}
+.nav-r .cta{opacity:1;background:var(--ink);color:#fff;padding:10px 20px;border-radius:999px;letter-spacing:.04em;text-transform:none;font-size:.82rem}
+nav.scrolled .nav-r a:not(.cta),nav.scrolled .logo{opacity:1;color:#0A2373}
+nav.dark .cta{background:#fff;color:var(--ink)}
+
+/* ───────── HERO ───────── */
+.hero{position:relative;min-height:max(100vh,600px);min-height:max(100svh,600px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:stretch;padding:0 5vw;overflow:hidden}
+.copy{position:relative;z-index:5;display:flex;flex-direction:column;align-self:stretch;min-width:0;padding:clamp(72px,10vh,100px) 0 clamp(16px,3.2vh,34px)}
+.sp{flex:1 1 0}
+.sp1{min-height:80px}
+.sp2{flex-grow:1.5;min-height:64px}
+.module{display:flex;flex-direction:column;width:100%;max-width:min(100%,35vw)}
+.h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(1.6rem,min(3.8vw,6.4vh),3.8rem);line-height:1.08;letter-spacing:-.015em;color:var(--ink);min-height:1em;margin-bottom:.16em}
+.h1 b{font-weight:600}
+.h1 .st{color:#BCC5D8;font-family:'DM Mono',monospace;font-weight:400;letter-spacing:.02em}
+.sub{max-width:500px;font-size:clamp(.74rem,min(.92rem,1.9vh),.92rem);line-height:1.7;color:var(--muted);margin:clamp(10px,2vh,16px) 0 0}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{border-radius:999px;padding:13px 26px;font-size:.85rem;letter-spacing:.02em;border:1.5px solid var(--ink);transition:transform .25s var(--expo),background .25s,color .25s;text-decoration:none;display:inline-block}
+.btn.solid{background:var(--ink);color:#fff}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.kw{display:flex;align-items:center;gap:10px;flex-wrap:nowrap;white-space:nowrap;margin-bottom:clamp(12px,2vh,20px)}
+.kw span{font-size:min(.66rem,.74vw);font-weight:500;letter-spacing:.08em;color:var(--moss)}
+.kw i{width:5px;height:5px;border-radius:50%;background:#E9708F;display:block;flex:none}
+.kw>*{opacity:0;transform:translateY(8px);transition:opacity .7s var(--expo),transform .7s var(--expo)}
+.go .kw>*{opacity:1;transform:none}
+.kw>*:nth-child(1){transition-delay:.2s}.kw>*:nth-child(2){transition-delay:.3s}.kw>*:nth-child(3){transition-delay:.4s}.kw>*:nth-child(4){transition-delay:.5s}.kw>*:nth-child(5){transition-delay:.6s}.kw>*:nth-child(6){transition-delay:.7s}.kw>*:nth-child(7){transition-delay:.8s}
+.mods{display:flex;flex-direction:column;align-items:flex-start;gap:10px;max-width:100%;margin-top:clamp(22px,5vh,46px)}
+.btns{margin:0}
+.chip{display:flex;align-items:center;gap:10px;border-radius:14px;padding:10px 20px 10px 10px;box-shadow:0 14px 30px -12px rgba(10,35,115,.25);max-width:100%}
+.chip i{width:30px;height:30px;border-radius:50%;display:block;flex:none}
+.chip b{display:block;font-weight:600;font-size:.8rem;color:var(--ink)}
+.chip span{display:block;font-size:.72rem;color:var(--muted);margin-top:2px;line-height:1.4}
+.chip u{text-decoration:none;white-space:nowrap}
+.chip>div{min-width:0}
+.chip.c1{background:rgba(253,226,218,.94)}
+.chip.c1 i{background:linear-gradient(135deg,#F2A0B0,#DB5A7D)}
+.chip.c2{background:rgba(214,230,243,.94)}
+.chip.c2 i{background:linear-gradient(135deg,#8DB7D5,#0A4F98)}
+.scroll{display:flex;justify-content:flex-start;padding-top:clamp(16px,3vh,30px)}
+.arrow{display:inline-flex;margin-left:-3px;color:var(--ink);opacity:.5;animation:bob 2.2s ease-in-out infinite;transition:opacity .2s}
+.arrow:hover{opacity:1}
+.arrow svg{width:20px;height:20px}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+.gw{position:relative;display:inline-block;isolation:isolate}
+.gw svg{position:absolute;z-index:-1;left:-6%;bottom:.04em;width:112%;height:.2em;overflow:visible;pointer-events:none}
+.gw svg path{stroke-dasharray:140;stroke-dashoffset:140;transition:stroke-dashoffset 1s var(--expo)}
+.gw svg.on path{stroke-dashoffset:0}
+
+/* reveal helpers for intro */
+.in-up{opacity:0;transform:translateY(16px);transition:opacity .8s var(--expo),transform .8s var(--expo)}
+.go .in-up{opacity:1;transform:none}
+
+/* stage with illustration (transparent cut-out, sits directly on the cream page) */
+.stage{position:relative}
+.hero-photo{position:absolute;top:clamp(24px,4vh,48px);bottom:0;left:-4%;right:-5vw;container-type:size;
+  opacity:0;transform:translateX(5%);transition:opacity 1.4s ease .2s,transform 1.8s var(--expo) .2s;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16%),linear-gradient(180deg,transparent 0,#000 12%);-webkit-mask-composite:source-in;
+  mask-image:linear-gradient(90deg,transparent 0,#000 16%),linear-gradient(180deg,transparent 0,#000 12%);mask-composite:intersect}
+.go .hero-photo{opacity:1;transform:none}
+/* image stage = "object-fit:cover" at 78% / 60%, built from container units so flowers stay glued to the picture */
+.hp{position:absolute;width:max(100cqw,150cqh);aspect-ratio:3/2;left:calc((100cqw - max(100cqw,150cqh))*.78);top:calc((100cqh - max(100cqw,150cqh)*.6667)*.6);
+  transform:scale(1.06);transform-origin:70% 60%;transition:transform 2.4s var(--expo) .2s}
+.go .hp{transform:none}
+.hp>img{position:absolute;display:block;user-select:none;-webkit-user-drag:none}
+.hp>img.base{inset:0;width:100%;height:100%}
+.hp>img.fl{will-change:transform;transform:rotate(var(--a,0deg))}
+
+/* card face */
+.face{position:absolute;inset:0;color:var(--ci,#fff)}
+.face svg.art{position:absolute;inset:0;width:100%;height:100%}
+.face .shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,var(--sh,.22)),transparent 50%)}
+.face .sheen{position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.35),transparent 35%,transparent 70%,rgba(255,255,255,.12));mix-blend-mode:soft-light;pointer-events:none}
+.face .pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.face .mark{position:absolute;right:6%;top:9%;display:flex;align-items:center;gap:.4em;font-family:'Fraunces',serif;font-weight:400;font-size:clamp(9px,1.05vw,15px)}
+.face .mark svg{width:1.5em;height:1.5em}
+.face .ct{position:absolute;left:6%;bottom:9%;font-family:'Fraunces',serif;font-weight:300;font-size:clamp(13px,1.7vw,24px);line-height:1.1}
+.face .ct small{display:block;font-family:'DM Sans',sans-serif;font-size:.5em;letter-spacing:.14em;text-transform:uppercase;opacity:.8;margin-top:.5em}
+.face .cn{position:absolute;right:6%;bottom:9%;font-family:'DM Mono',monospace;font-size:clamp(8px,.85vw,12px);letter-spacing:.14em;opacity:.8}
+
+/* ───────── WORK (dark) ───────── */
+.work{background:#fff;color:var(--ink);padding:110px 5vw 140px;position:relative}
+.work-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:64px}
+.work h2{font-family:'Fraunces',serif;font-weight:200;font-size:clamp(2.2rem,4.4vw,4rem);line-height:1.05}
+.work h2{color:var(--ink)}
+.work h2 em{font-style:italic;color:#DB5A7D}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{padding:8px 18px;border-radius:999px;background:transparent;border:1px solid rgba(10,35,115,.22);color:rgba(10,35,115,.7);font-size:.78rem;transition:all .25s}
+.pill:hover{border-color:var(--ink);color:var(--ink)}
+.pill.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:56px 36px;perspective:1400px}
+.wi{--p:0;cursor:pointer;display:block}
+.wi.hide{display:none}
+.wcard{position:relative;aspect-ratio:3/2;border-radius:3.2% / 4.8%;overflow:hidden;
+  transform-origin:50% 100%;
+  transform:rotateX(calc((1 - var(--p))*42deg)) translateY(calc((1 - var(--p))*90px)) scale(calc(.92 + var(--p)*.08));
+  opacity:calc(.15 + var(--p)*.85);
+  box-shadow:0 26px 44px -24px rgba(10,35,115,.38),0 6px 14px -8px rgba(10,35,115,.18);
+  transition:translate .5s var(--expo),box-shadow .5s;will-change:transform}
+.wi:hover .wcard{translate:0 -10px;box-shadow:0 36px 56px -22px rgba(10,35,115,.45),0 8px 18px -8px rgba(10,35,115,.2)}
+.wmeta{display:flex;justify-content:space-between;gap:12px;margin-top:18px;opacity:calc(var(--p)*1);font-size:.82rem}
+.wmeta b{font-family:'Fraunces',serif;font-weight:300;font-size:1.1rem;display:block}
+.wmeta span{color:rgba(10,35,115,.55);letter-spacing:.06em;text-transform:uppercase;font-size:.68rem}
+.wmeta em{font-style:normal;color:rgba(10,35,115,.55);font-family:'DM Mono',monospace;font-size:.74rem}
+
+/* leaves that sprout around a card on hover */
+.wi{position:relative;isolation:isolate}
+.leaves{position:absolute;left:0;top:0;width:100%;aspect-ratio:3/2;z-index:-1;pointer-events:none}
+.lf{position:absolute;width:0;height:0}
+.lf .g{position:absolute;left:0;bottom:0;transform-origin:50% 100%;transform:translate(-50%,0) rotate(var(--r,0deg)) scale(0);opacity:0;
+  transition:transform .9s var(--spring,cubic-bezier(.3,1.5,.4,1)) var(--d,0s),opacity .35s ease var(--d,0s)}
+.lf svg{display:block;overflow:visible;transform-origin:50% 100%}
+.wi.grow .lf .g{transform:translate(-50%,0) rotate(var(--r,0deg)) scale(1);opacity:1}
+.wi.grow .lf svg{animation:lfsway 3.2s ease-in-out calc(var(--d,0s) + .9s) infinite}
+.wi:not(.grow) .lf .g{transition:transform .35s ease,opacity .3s ease;transition-delay:0s}
+@keyframes lfsway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+@media(prefers-reduced-motion:reduce){.wi.grow .lf svg{animation:none}}
+
+/* ───────── ABOUT / CONTACT ───────── */
+.about{padding:130px 5vw;display:grid;grid-template-columns:1fr 1fr;gap:6vw;max-width:1300px;margin:0 auto}
+.about h2{font-family:'Fraunces',serif;font-weight:200;font-size:clamp(2rem,3.6vw,3.2rem);line-height:1.1;color:var(--ink)}
+.about h2 em{color:#DB5A7D}
+.about p{color:var(--muted);line-height:1.85;font-size:.98rem;margin-bottom:18px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
+.tags span{border:1px solid rgba(10,79,152,.25);border-radius:999px;padding:6px 14px;font-size:.76rem;color:var(--moss)}
+/* portrait: arch window, soft circles, sprig and a slowly turning badge */
+.about-l{display:flex;flex-direction:column;gap:56px}
+.portrait{position:relative;width:min(380px,86%);aspect-ratio:4/5;margin:6px 0 0 6%}
+.pt-c{position:absolute;border-radius:50%;pointer-events:none;transform:scale(.6);opacity:0;transition:transform 1.4s var(--expo) .1s,opacity 1s ease .1s}
+.pt-c.c1{width:78%;aspect-ratio:1;left:-20%;bottom:-8%;background:#8DB7D5;opacity:0}
+.pt-c.c2{width:34%;aspect-ratio:1;right:-9%;top:6%;background:#F4A89C}
+.pt-c.c3{width:9%;aspect-ratio:1;left:-6%;top:12%;background:#EDA20A}
+.portrait.in .pt-c{transform:none;opacity:1}
+.portrait.in .pt-c.c1{opacity:.55}
+.arch{position:absolute;inset:0;border-radius:999px 999px 26px 26px;overflow:hidden;
+  background:linear-gradient(180deg,#DCE8F2 0%,#EEF3F6 55%,#FCE6DF 100%);
+  box-shadow:0 40px 60px -34px rgba(10,35,115,.45);
+  clip-path:inset(100% 0 0 0 round 999px 999px 26px 26px);transition:clip-path 1.5s var(--expo) .2s}
+.portrait.in .arch{clip-path:inset(0 0 0 0 round 999px 999px 26px 26px)}
+.arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 14%;transform:scale(1.14);transition:transform 2.2s var(--expo) .2s}
+.portrait.in .arch img{transform:scale(1.02)}
+.arch-line{position:absolute;inset:-12px;border:1.5px solid rgba(10,35,115,.28);border-radius:999px 999px 38px 38px;pointer-events:none;opacity:0;transition:opacity 1s ease 1s}
+.portrait.in .arch-line{opacity:1}
+.sprig{position:absolute;right:-6%;top:-5%;width:30%;transform-origin:20% 100%;transform:scale(0) rotate(-12deg);transition:transform 1.1s cubic-bezier(.3,1.5,.4,1) 1.1s}
+.portrait.in .sprig{transform:none;animation:lfsway 3.6s ease-in-out 2.4s infinite}
+.badge{position:absolute;left:-13%;bottom:9%;width:108px;height:108px;opacity:0;transform:scale(.6);transition:transform 1s var(--expo) 1.2s,opacity .8s ease 1.2s}
+.portrait.in .badge{opacity:1;transform:none}
+.badge svg{width:100%;height:100%;animation:spin 18s linear infinite}
+.badge::after{content:"";position:absolute;inset:34%;border-radius:50%;background:#fff;box-shadow:0 6px 16px -6px rgba(10,35,115,.35)}
+.badge i{position:absolute;inset:0;display:grid;place-items:center;z-index:1;font-style:normal;font-size:1.25rem;color:#DB5A7D}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.badge svg,.portrait.in .sprig{animation:none}}
+@media(max-width:900px){.about-l{gap:44px}.portrait{margin-left:8%}}
+
+/* ───────── ABOUT (portrait left · copy + services right) ───────── */
+.about{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:7vw;align-items:center;max-width:1280px}
+.about-l{display:block}
+.about .portrait{width:min(380px,100%);aspect-ratio:4/5.1;margin:0 auto 0 4%}
+.about .arch-line{inset:-12px;border:1.2px solid rgba(18,96,176,.45);border-radius:999px 999px 30px 30px}
+.about .arch{border-radius:999px 999px 20px 20px;box-shadow:0 30px 50px -34px rgba(10,35,115,.35)}
+.about .arch{clip-path:inset(100% 0 0 0 round 999px 999px 20px 20px)}.about .portrait.in .arch{clip-path:inset(0 0 0 0 round 999px 999px 20px 20px)}
+.wc{position:absolute;border-radius:50%;pointer-events:none;filter:blur(26px);opacity:0;transform:scale(.6);transition:opacity 1.6s ease .2s,transform 2s var(--expo) .2s;z-index:-1}
+.wc-pink{width:62%;aspect-ratio:1;right:-30%;top:-6%;background:radial-gradient(circle,rgba(244,168,156,.85),rgba(244,168,156,0) 68%)}
+.wc-blue{width:78%;aspect-ratio:1;left:-34%;bottom:-16%;background:radial-gradient(circle,rgba(141,183,213,.75),rgba(141,183,213,0) 68%)}
+.portrait.in .wc{opacity:1;transform:none}
+.sprout{position:absolute;width:64px;left:-34px;bottom:-22px;transform-origin:55% 100%;transform:scale(0) rotate(-20deg);transition:transform 1s cubic-bezier(.3,1.6,.4,1) 1.3s}
+.portrait.in .sprout{transform:none;animation:lfsway 3.4s ease-in-out 2.4s infinite}
+.about-r h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2.4rem,4.4vw,4rem);line-height:1.05;color:var(--ink);margin-bottom:28px}
+.about-r h2 em{color:#DB5A7D}
+.about .about-r p{color:#0A4F98;font-size:1.02rem;line-height:1.75;margin-bottom:16px}
+.sup-h{font-family:'Fraunces',serif;font-weight:300;font-size:1.45rem;color:#0A4F98;margin:40px 0 14px}
+.sup{list-style:none;display:grid;grid-template-columns:1fr 1fr;column-gap:48px}
+.sup li{position:relative;padding:13px 0 13px 34px;color:#0A4F98;font-size:1.02rem;border-bottom:1px solid rgba(10,79,152,.16);
+  opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .7s var(--expo)}
+.sup li::before{content:"";position:absolute;left:0;top:50%;width:22px;height:22px;margin-top:-11px;background:#D98592;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 2a3.2 3.2 0 0 1 3.2 3.2c0 .8-.3 1.5-.8 2.1.6-.5 1.3-.8 2.1-.8a3.2 3.2 0 0 1 0 6.4c-.8 0-1.5-.3-2.1-.8.5.6.8 1.3.8 2.1a3.2 3.2 0 0 1-6.4 0c0-.8.3-1.5.8-2.1-.6.5-1.3.8-2.1.8a3.2 3.2 0 0 1 0-6.4c.8 0 1.5.3 2.1.8-.5-.6-.8-1.3-.8-2.1A3.2 3.2 0 0 1 10 2Z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 2a3.2 3.2 0 0 1 3.2 3.2c0 .8-.3 1.5-.8 2.1.6-.5 1.3-.8 2.1-.8a3.2 3.2 0 0 1 0 6.4c-.8 0-1.5-.3-2.1-.8.5.6.8 1.3.8 2.1a3.2 3.2 0 0 1-6.4 0c0-.8.3-1.5.8-2.1-.6.5-1.3.8-2.1.8a3.2 3.2 0 0 1 0-6.4c.8 0 1.5.3 2.1.8-.5-.6-.8-1.3-.8-2.1A3.2 3.2 0 0 1 10 2Z'/%3E%3C/svg%3E") center/contain no-repeat}
+.about-r.in .sup li{opacity:1;transform:none}
+.about-r.in .sup li:nth-child(1){transition-delay:.1s}.about-r.in .sup li:nth-child(2){transition-delay:.18s}.about-r.in .sup li:nth-child(3){transition-delay:.26s}.about-r.in .sup li:nth-child(4){transition-delay:.34s}.about-r.in .sup li:nth-child(5){transition-delay:.42s}.about-r.in .sup li:nth-child(6){transition-delay:.5s}
+.sup li:hover::before{animation:spin 1.2s ease}
+@media(max-width:900px){.about{gap:56px}.about .portrait{margin:0 auto}.sup{column-gap:24px}}
+@media(max-width:520px){.sup{grid-template-columns:1fr}}
+
+.contact{background:var(--moss);color:#fff;padding:120px 5vw;text-align:center}
+.contact h2{font-family:'Fraunces',serif;font-weight:200;font-size:clamp(2.2rem,5vw,4.6rem);line-height:1.05;margin-bottom:28px}
+.contact h2 em{color:var(--coral)}
+.mail{display:inline-flex;align-items:center;gap:14px;font-size:1.1rem;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:6px}
+.mail button{background:rgba(255,255,255,.14);border:0;color:#fff;border-radius:999px;padding:6px 14px;font-size:.74rem}
+.mail button:hover{background:rgba(255,255,255,.25)}
+.links{display:flex;gap:26px;justify-content:center;margin-top:40px;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+.links a{color:rgba(255,255,255,.7);text-decoration:none}
+.links a:hover{color:#fff}
+footer{background:var(--moss);color:rgba(255,255,255,.5);text-align:center;font-size:.74rem;padding:0 0 36px}
+
+/* ───────── CURSOR LABEL ───────── */
+#cl{position:fixed;left:0;top:0;z-index:999;pointer-events:none;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.88);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 8px 24px -6px rgba(10,35,115,.35),0 0 0 1px rgba(10,35,115,.06);display:grid;place-items:center;transform:translate(-50%,-50%) scale(.4);opacity:0;transition:opacity .2s,transform .45s var(--expo)}
+#cl.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+#cl svg{width:42px;height:42px;overflow:visible}
+#cl .stem{stroke-dasharray:30;stroke-dashoffset:30}
+#cl .lf{transform:scale(0);opacity:0}
+#cl .soil{transform-origin:24px 40px;transform:scaleX(0)}
+#cl.on .soil{animation:soil .35s var(--expo) forwards}
+#cl.on .stem{animation:stem .6s .12s cubic-bezier(.3,.7,.2,1) forwards}
+#cl.on .l1{animation:leaf .55s .5s var(--expo) forwards}
+#cl.on .l2{animation:leaf .55s .66s var(--expo) forwards}
+#cl.on .l3{animation:leaf .5s .82s var(--expo) forwards}
+#cl.on svg{animation:sway 2.6s 1.3s ease-in-out infinite}
+@keyframes soil{to{transform:scaleX(1)}}
+@keyframes stem{to{stroke-dashoffset:0}}
+@keyframes leaf{0%{transform:scale(0) rotate(-12deg);opacity:0}70%{opacity:1}100%{transform:scale(1) rotate(0);opacity:1}}
+@keyframes sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+@media(hover:hover){.wi,.wi *{cursor:none}}
+@media(hover:none){#cl{display:none}}
+
+/* ───────── DETAIL ───────── */
+#detail{position:fixed;inset:0;z-index:200;overflow-y:auto;visibility:hidden;pointer-events:none;background:var(--paper)}
+#detail.open{visibility:visible;pointer-events:all}
+.d-hero{position:relative;height:100vh;overflow:hidden;background:var(--ink)}
+.d-hero .art{position:absolute;inset:0;width:100%;height:100%}
+.d-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55),transparent 55%)}
+.d-hero.light::after{display:none}
+.d-hero.light .d-text{color:var(--ink)}
+.d-hero.light #dart{position:absolute;inset:8vh 5vw 38vh}
+.d-hero.light .d-title{font-size:clamp(2rem,4.4vw,4rem)}
+.d-text{position:absolute;left:0;right:0;bottom:0;padding:0 6vw 7vh;z-index:2;color:#fff}
+.ln{display:block;overflow:hidden}
+.ln>span{display:block;transform:translateY(110%);transition:transform .9s var(--expo)}
+.d-open .ln>span{transform:none}
+.d-eye{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;opacity:.8;margin-bottom:14px}
+.d-title{font-family:'Fraunces',serif;font-weight:200;font-size:clamp(2.8rem,7vw,6.4rem);line-height:1}
+.d-sub{margin-top:14px;font-size:.92rem;opacity:.75}
+.d-back{position:fixed;top:24px;left:5vw;z-index:300;background:rgba(10,35,115,.6);backdrop-filter:blur(10px);color:#fff;border:0;border-radius:999px;padding:10px 18px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;opacity:0;transform:translateX(-14px);transition:opacity .4s,transform .5s var(--expo);display:none}
+.d-back.show{display:block}
+.d-open .d-back{opacity:1;transform:none}
+.d-body{max-width:1100px;margin:0 auto;padding:90px 6vw 120px;opacity:0;transform:translateY(40px);transition:opacity .8s var(--expo) .3s,transform .8s var(--expo) .3s}
+.d-open .d-body{opacity:1;transform:none}
+.d-meta{display:flex;gap:56px;flex-wrap:wrap;padding-bottom:44px;border-bottom:1px solid rgba(10,79,152,.14);margin-bottom:52px}
+.d-meta label{display:block;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.d-meta strong{font-weight:500;font-size:.94rem}
+.d-desc{max-width:640px;font-size:1.08rem;line-height:1.9;color:var(--muted)}
+.d-desc p+p{margin-top:1.5em}
+.d-gal{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:64px}
+.d-gal>div{position:relative;aspect-ratio:3/2;border-radius:6px;overflow:hidden}
+.d-gal>div:first-child{grid-column:1/-1;aspect-ratio:16/8}
+.d-gal svg{position:absolute;inset:0;width:100%;height:100%}
+#morph{position:fixed;z-index:250;overflow:hidden;pointer-events:none;display:none;will-change:left,top,width,height}
+#morph svg{position:absolute;inset:0;width:100%;height:100%}
+
+/* ───────── RESPONSIVE ───────── */
+@media(max-height:640px) and (min-width:901px){.copy{padding-top:64px;padding-bottom:14px}.sub{line-height:1.55}.h1{line-height:1.04}.chip{padding:7px 16px 7px 8px}.chip i{width:24px;height:24px}.chip b{font-size:.74rem}.chip span{font-size:.66rem;margin-top:1px}.btn{padding:9px 20px;font-size:.78rem}.mods{gap:8px}}
+@media(max-width:1180px){.kw{flex-wrap:wrap;white-space:normal}.kw span{font-size:.62rem}}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:0}
+  .sp1{flex:none;min-height:0;height:56px}
+  .sp2{flex:none;min-height:0;height:44px}
+  .module{max-width:none}
+  .scroll{padding-top:22px}
+  .mods{margin-top:24px}
+  .kw{flex-wrap:wrap;white-space:normal}
+  .kw span{font-size:.64rem}
+  .copy{padding-top:120px}
+  .stage{height:auto;margin:0}
+  .hero-photo{position:relative;inset:auto;height:clamp(280px,92vw,480px);margin:16px -5vw 0;left:auto;right:auto}
+  .wgrid{grid-template-columns:repeat(2,1fr)}
+  .about{grid-template-columns:1fr}
+  .nav-r a:not(.cta){display:none}
+}
+/* case-study layout (projects with a "story") */
+#dstory{opacity:0;transform:translateY(34px);transition:opacity .9s var(--expo) .35s,transform .9s var(--expo) .35s}
+.d-open #dstory{opacity:1;transform:none}
+.cs-hero{padding:132px 0 64px;text-align:left}
+.cs-in{max-width:1080px;margin:0 auto;padding:0 6vw}
+.cs-eye{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#0A4F98;margin-bottom:22px}
+.cs-eye i{width:8px;height:8px;border-radius:50%;background:#E9708F;display:inline-block}
+.cs-title{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2rem,4.6vw,3.7rem);line-height:1.08;color:var(--ink);max-width:16em;letter-spacing:-.01em}
+.cs-over{margin-top:26px;max-width:640px;font-size:1.1rem;line-height:1.75;color:#0A4F98}
+.cs-shot{margin:40px auto 0;max-width:1080px;padding:0 3vw}
+.cs-shot img{display:block;width:100%;height:auto;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 7%,#000 93%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(180deg,transparent,#000 7%,#000 93%,transparent);mask-composite:intersect}
+.cs-body{max-width:1080px;margin:0 auto;padding:0 6vw 130px}
+.cs-role{display:grid;grid-template-columns:200px 1fr;gap:32px;background:#fff;border-radius:22px;padding:34px 40px;margin-top:-52px;position:relative;z-index:2;box-shadow:0 26px 44px -30px rgba(10,35,115,.35)}
+.cs-role h2{font-family:'Fraunces',serif;font-weight:400;font-size:1.35rem;color:var(--ink);display:flex;align-items:center;gap:12px}
+.cs-role h2::before{content:"";width:20px;height:20px;background:#D98592;-webkit-mask:var(--petal) center/contain no-repeat;mask:var(--petal) center/contain no-repeat}
+.cs-role p{color:#0A4F98;line-height:1.8;font-size:1.02rem}
+.cs-sec{margin-top:96px}
+.cs-sec>h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--ink);line-height:1.1;margin-bottom:28px}
+.cs-sec>h2 em{color:#DB5A7D}
+.cs-sec>p{max-width:720px;color:#0A4F98;font-size:1.06rem;line-height:1.85}
+.cs-dec{border-top:1px solid rgba(10,79,152,.16)}
+.cs-dec>div{display:grid;grid-template-columns:90px minmax(0,.8fr) minmax(0,1.2fr);gap:32px;padding:38px 0;border-bottom:1px solid rgba(10,79,152,.16)}
+.cs-dec .n{font-family:'Fraunces',serif;font-style:italic;font-size:1.6rem;color:#DB5A7D}
+.cs-dec h3{font-family:'Fraunces',serif;font-weight:400;font-size:1.45rem;line-height:1.25;color:var(--ink)}
+.cs-dec p{color:#0A4F98;line-height:1.85;font-size:1.02rem}
+.cs-out{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cs-out>div{background:#fff;border-radius:20px;padding:30px 28px;box-shadow:0 24px 40px -30px rgba(10,35,115,.3)}
+.cs-out b{display:block;font-family:'Fraunces',serif;font-weight:400;font-size:1.2rem;line-height:1.3;color:var(--ink);margin-bottom:12px}
+.cs-out span{color:#0A4F98;line-height:1.75;font-size:.98rem}
+.cs-out>div::before{content:"";display:block;width:26px;height:26px;margin-bottom:18px;background:#D98592;-webkit-mask:var(--petal) center/contain no-repeat;mask:var(--petal) center/contain no-repeat}
+:root{--petal:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 2a3.2 3.2 0 0 1 3.2 3.2c0 .8-.3 1.5-.8 2.1.6-.5 1.3-.8 2.1-.8a3.2 3.2 0 0 1 0 6.4c-.8 0-1.5-.3-2.100-.8.5.6.8 1.3.8 2.100a3.200 3.200 0 0 1-6.400 0c0-.8.3-1.5.8-2.1-.6.5-1.3.8-2.1.8a3.2 3.2 0 0 1 0-6.4c.8 0 1.5.3 2.1.8-.5-.6-.8-1.3-.8-2.1A3.2 3.2 0 0 1 10 2Z'/%3E%3C/svg%3E")}
+@media(max-width:900px){.cs-role{grid-template-columns:1fr;gap:14px;padding:28px}.cs-dec>div{grid-template-columns:44px 1fr;gap:10px 16px}.cs-dec p{grid-column:2}.cs-out{grid-template-columns:1fr}.cs-hero{padding-top:110px}.cs-role{margin-top:-36px}.cs-sec{margin-top:72px}}
+
+@media(max-width:560px){.wgrid{grid-template-columns:1fr}.d-gal{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){
+  *{transition-duration:.01s!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="logo" href="#top">Jenny Wang</a>
+  <div class="nav-r">
+    <a href="#work">Work</a><a href="#about">About</a>
+    <a class="cta" href="#contact">Get in touch</a>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="copy">
+    <div class="kw" id="kw">
+      <span>STRATEGIC COMMUNICATIONS</span><i></i><span>PROJECT COORDINATION</span><i></i><span>VISUAL DESIGN</span><i></i><span>SUSTAINABILITY</span>
+    </div>
+    <div class="sp sp1" aria-hidden="true"></div>
+    <div class="module">
+      <h1 class="h1" id="h1" aria-label="Designer of things that grow."></h1>
+      <p class="sub in-up" style="transition-delay:1.0s">A communications professional working across strategic communications, project coordination and visual design. I turn ideas into clear messages, engaging visuals and creative projects, helping people and initiatives connect with audiences and create meaningful impact.</p>
+      <div class="mods">
+        <div class="chip c1 in-up" style="transition-delay:1.2s"><i></i><div><b>Based in Sweden</b><span>Open for projects</span></div></div>
+        <div class="chip c2 in-up" style="transition-delay:1.4s"><i></i><div><b>Growing this season</b><span><u>Events &amp; Experiences&nbsp;·</u> <u>AI-powered Creation&nbsp;·</u> <u>Nature &amp; Storytelling</u></span></div></div>
+      </div>
+    </div>
+    <div class="sp sp2" aria-hidden="true"></div>
+      <div class="btns in-up" style="transition-delay:1.6s">
+        <a class="btn solid" href="#work">Featured projects</a>
+      </div>
+      <div class="scroll in-up" style="transition-delay:1.9s"><a class="arrow" href="#work" aria-label="Scroll to featured projects"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v12M4 10l5 5 5-5"/></svg></a></div>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="hero-photo"><div class="hp" id="hp" role="img" aria-label="Illustration of a woman looking up, surrounded by sunflowers"><img class="base" src="hero2.webp" alt="" width="1536" height="1024" fetchpriority="high"><img class="fl" src="fl/f0.webp" alt="" style="left:40.299%;top:0.000%;width:13.477%;height:16.309%;transform-origin:50.2% 97.0%" data-cx="723" data-cy="74"><img class="fl" src="fl/f1.webp" alt="" style="left:65.625%;top:0.000%;width:17.839%;height:15.625%;transform-origin:49.2% 96.2%" data-cx="1143" data-cy="65"><img class="fl" src="fl/f2.webp" alt="" style="left:11.263%;top:8.496%;width:13.151%;height:20.312%;transform-origin:47.3% 68.9%" data-cx="277" data-cy="187"><img class="fl" src="fl/f3.webp" alt="" style="left:77.865%;top:22.852%;width:12.109%;height:15.234%;transform-origin:50.6% 96.2%" data-cx="1290" data-cy="312"><img class="fl" src="fl/f4.webp" alt="" style="left:85.352%;top:35.254%;width:11.263%;height:16.016%;transform-origin:13.4% 75.5%" data-cx="1396" data-cy="446"><img class="fl" src="fl/f5.webp" alt="" style="left:0.000%;top:45.898%;width:10.221%;height:16.016%;transform-origin:36.5% 64.8%" data-cx="77" data-cy="545"><img class="fl" src="fl/f6.webp" alt="" style="left:25.846%;top:48.730%;width:13.542%;height:14.941%;transform-origin:40.4% 94.4%" data-cx="502" data-cy="575"><img class="fl" src="fl/f7.webp" alt="" style="left:13.281%;top:68.262%;width:11.458%;height:14.746%;transform-origin:53.1% 87.9%" data-cx="294" data-cy="770"><img class="fl" src="fl/f8.webp" alt="" style="left:32.227%;top:70.605%;width:10.677%;height:14.258%;transform-origin:33.2% 88.3%" data-cx="573" data-cy="795"><img class="fl" src="fl/f9.webp" alt="" style="left:80.143%;top:74.902%;width:9.701%;height:13.965%;transform-origin:80.3% 81.5%" data-cx="1302" data-cy="839"><img class="fl" src="fl/f10.webp" alt="" style="left:54.948%;top:80.859%;width:19.466%;height:19.141%;transform-origin:51.3% 99.5%" data-cx="997" data-cy="932"><img class="fl" src="fl/f11.webp" alt="" style="left:41.146%;top:87.402%;width:13.086%;height:12.598%;transform-origin:52.4% 99.2%" data-cx="737" data-cy="970"></div></div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="work-head">
+    <h2>Featured <em>projects</em></h2>
+    <div class="pills" id="pills"></div>
+  </div>
+  <div class="wgrid" id="wgrid"></div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-l">
+    <figure class="portrait" id="portrait">
+      <span class="wc wc-pink"></span><span class="wc wc-blue"></span>
+      <div class="arch-line"></div>
+      <div class="arch"><img src="portrait.webp" alt="Portrait of Jenny Wang" width="480" height="600" loading="lazy"></div>
+      <svg class="sprout" viewBox="0 0 40 44" fill="none" aria-hidden="true">
+        <defs><linearGradient id="yl1" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#EDA20A"/><stop offset="1" stop-color="#F8DFA3"/></linearGradient>
+        <linearGradient id="yl2" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#F2B52E"/><stop offset="1" stop-color="#FBE9B8"/></linearGradient></defs>
+        <path d="M22 42C22 32 21 24 20 14" stroke="#B97800" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M21 30C11 31 4 25 3 15c11-1 18 5 18 15Z" fill="url(#yl1)"/>
+        <path d="M21 22C22 11 29 5 38 5c1 11-6 18-17 17Z" fill="url(#yl2)"/>
+      </svg>
+    </figure>
+  </div>
+  <div class="about-r">
+    <h2>Making ideas <em>bloom</em></h2>
+    <p>I’m Jenny Wang, a digital communicator and designer based in Sweden. I help people turn complex ideas into creative stories, clean websites and engaging events that bring people together. I combine communication strategy, visual design and project coordination to bring those ideas to life.</p>
+    <p>Outside work, I travel with a camera and grow vegetables in my garden. I love coming back to the same patch of soil and seeing what’s changed since last week.</p>
+    <h3 class="sup-h">I can support you with</h3>
+    <ul class="sup">
+      <li>Brand identity</li><li>Web design</li>
+      <li>Visual creation</li><li>Video editing</li>
+      <li>Print design</li><li>Communication strategies</li>
+    </ul>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Let's grow something <em>together</em></h2>
+  <div class="mail"><span id="mailtxt">jennywang.work@gmail.com</span><button id="copy">Copy</button></div>
+  <div class="links"><a href="https://www.linkedin.com/">LinkedIn</a><a href="https://www.instagram.com/">Instagram</a><a href="https://www.behance.net/">Behance</a></div>
+</section>
+<footer><p>© 2026 Jenny Wang · Stockholm, Sweden</p></footer>
+
+<div id="cl" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" style="transform-origin:24px 40px">
+  <path class="soil" d="M13 41h22" stroke="#8A6A45" stroke-width="3" stroke-linecap="round"/>
+  <path class="stem" d="M24 40C24 33 24 26 24.5 17" stroke="#2A4426" stroke-width="2.4" stroke-linecap="round"/>
+  <path class="lf l1" style="transform-origin:24px 30px" d="M24 30C17 31 12 27 11 20C18 19 23 23 24 30Z" fill="#5E9A4A"/>
+  <path class="lf l2" style="transform-origin:24px 26px" d="M24 26C25 18 31 14 38 15C38 22 32 27 24 26Z" fill="#2F6B3A"/>
+  <path class="lf l3" style="transform-origin:24.5px 18px" d="M24.5 18C20 15 20 9 24.5 5C29 9 29 15 24.5 18Z" fill="#8DC063"/>
+</svg></div>
+<div id="morph"></div>
+
+<div id="detail">
+  <button class="d-back" id="back">← Back</button>
+  <div class="d-hero" id="dhero">
+    <div id="dart"></div>
+    <div class="d-text">
+      <div class="d-eye ln"><span id="deye"></span></div>
+      <div class="d-title ln"><span id="dtitle"></span></div>
+      <div class="d-sub ln"><span id="dsub"></span></div>
+    </div>
+  </div>
+  <div id="dstory" style="display:none"></div>
+  <div class="d-body">
+    <div class="d-meta" id="dmeta"></div>
+    <div class="d-desc" id="ddesc"></div>
+    <div class="d-gal" id="dgal"></div>
+  </div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════════════════
+   EDIT HERE — your details and projects
+   ink = text colour on the card, pal = 4 colours used for the
+   generated artwork. Replace with real images later.
+   ════════════════════════════════════════════════════════════ */
+const SITE = { email: "jennywang.work@gmail.com" };   // <- your email
+
+const PROJECTS = [
+  { slug:"exponential-roadmap-initiative", title:"Exponential Roadmap Initiative", category:"Web Design", label:"Web Design · WordPress · Climate Communications", year:2024, place:"",
+    client:"Exponential Roadmap Initiative", role:"Web design, WordPress", img:"eri.webp", bg:"#DAEDEA",
+    desc:"A website redesign to show how the initiative brings companies together to accelerate climate action.",
+    story:{
+      name:"ERI Website Redesign",
+      title:"Rebuilding ERI’s website around its climate work and resources",
+      overview:"A full WordPress rebuild that introduced a new visual identity across the site and reorganised how visitors learn about ERI’s climate work and find practical resources.",
+      role:"I developed the website’s visual identity, including its colour palette and banner system, designed the page layouts, and rebuilt every page in WordPress. My manager and I worked together to define the site structure. My colleague wrote the website copy.",
+      challenge:"The previous homepage brought different types of information together without a clear hierarchy, and its imagery did little to reflect ERI’s identity. Resources were spread across separate pages and linked from the main navigation, where their categories were difficult to distinguish. The redesign needed to give first-time visitors a clear overview of ERI’s work and help people with a specific resource in mind reach it directly.",
+      decisions:[
+        {h:"Build a consistent visual identity across the site",p:"I developed a new colour palette and banner system to give pages a consistent visual opening. I designed the layouts around the content and purpose of each page, then implemented the visual system across the site in WordPress."},
+        {h:"Give visitors a clear starting point",p:"My manager and I worked together on the site structure, including the homepage hierarchy and main navigation. We considered different menu structures and chose a simpler hierarchy that balanced visual clarity with what was feasible in WordPress. I designed and built the homepage to introduce ERI and its areas of work, with direct routes to key pages through the main navigation."},
+        {h:"Organise resources around the Business Playbook",p:"I designed and built a dedicated Resources hub that brings ERI’s materials together on a single page. The hub uses the pillars of ERI’s Business Playbook to group resources by area of work, so visitors can browse the collection and identify guidance that fits their current priorities."}
+      ],
+      outcomes:[
+        {b:"A full WordPress rebuild.",t:"Every page was rebuilt, with a new banner system, a new colour palette and layouts tailored to the content."},
+        {b:"A single-page introduction to ERI.",t:"The homepage brings together ERI’s role and areas of work, giving first-time visitors an overview in one place."},
+        {b:"Two ways to find resources.",t:"Visitors can use the main navigation to reach key resource pages directly or browse the full collection by Business Playbook pillar in the Resources hub."}
+      ]
+    } },
+  { slug:"northlight-festival", title:"Northlight Festival", category:"Print", year:2025, place:"Reykjavík, Iceland",
+    client:"Northlight", role:"Poster series, programme", ink:"#fff", sh:0.25,
+    pal:["#DCE8F2","#1260B0","#0A2373","#8DB7D5"],
+    desc:"A six-piece poster series and 48-page printed programme for a midwinter light festival. Layered transparency, glowing colour and handset type echo the festival's installations.\n\nA limited palette of deep indigo, electric cyan and warm white prints on uncoated stock for a soft, almost luminous feel." },
+  { slug:"moss-studio-site", title:"Moss Studio", category:"Web Design", year:2025, place:"Kyoto, Japan",
+    client:"Moss Studio", role:"UX, UI, front-end", ink:"#fff", sh:0.3,
+    pal:["#F4E6D0","#F4A89C","#0A4F98","#EDA20A"],
+    desc:"Design and build of a responsive website with an online shop preview for a ceramics studio. The design language mirrors the work: considered negative space, natural materials, nothing unnecessary.\n\nBuilt with vanilla JS and CSS custom properties for a first paint well under a second on mid-range mobile." },
+  { slug:"bloom-title-sequence", title:"Bloom", category:"Motion", year:2024, place:"Oaxaca, Mexico",
+    client:"Independent short film", role:"Motion design", ink:"#6B2418", sh:0,
+    pal:["#FDF3E6","#EDA20A","#F4A89C","#C8584A"],
+    desc:"A 30-second opening title sequence for a documentary short. Hand-drawn shapes in After Effects grow, merge and separate, following the film's themes of connection and loss.\n\nProduced in four days between final cut and festival deadline." },
+  { slug:"oat-and-honey", title:"Oat & Honey", category:"Branding", year:2024, place:"Lofoten, Norway",
+    client:"Oat & Honey Bakery", role:"Identity, packaging", ink:"#4A3000", sh:0,
+    pal:["#FDF3E6","#EDA20A","#B97800","#F4E6D0"],
+    desc:"Identity and packaging for a small-batch bakery that sells at farmers' markets and online. The brief: feel hand-made, never corporate.\n\nA loose ink-drawn wordmark, kraft bags with a one-colour stamp, and a wheat-and-honeycomb pattern for wrapping paper." },
+  { slug:"field-notes-zine", title:"Field Notes Zine", category:"Print", year:2024, place:"Marrakech, Morocco",
+    client:"Personal project", role:"Editorial design", ink:"#fff", sh:0.3,
+    pal:["#F4E6D0","#2A4426","#0A4F98","#EDA20A"],
+    desc:"A self-published 32-page zine on slow living: growing food, analogue photography, handwritten letters. The two-colour risograph palette was chosen as much for its imperfection as its look.\n\nPrint run of 60, sold out in three weeks." },
+  { slug:"tidal-app", title:"Tidal App", category:"Web Design", year:2024, place:"Hoi An, Vietnam",
+    client:"Concept", role:"Product design", ink:"#fff", sh:0.28,
+    pal:["#DCE8F2","#8DB7D5","#1260B0","#2A4426"],
+    desc:"Research, wireframes and a high-fidelity UI concept for a daily planner that adapts to energy rather than fighting it. Time-blocks are replaced with tidal rhythms: ebb, flow, rest.\n\nIncludes a component library and a prototype tested with eight participants." },
+  { slug:"pulse-logo-reel", title:"Pulse Logo Reel", category:"Motion", year:2023, place:"Dolomites, Italy",
+    client:"Various", role:"Animated logos", ink:"#fff", sh:0.3,
+    pal:["#FDF3E6","#0A2373","#1260B0","#F4A89C"],
+    desc:"Eight short animated logo stings made for clients over twelve months. Each is under four seconds and loops seamlessly, built for social headers and app splash screens.\n\nThe reel treats rhythm, bounce and easing as a design medium in its own right." }
+];
+const CATS = ["All","Branding","Print","Web Design","Motion"];
+
+/* ════════════════ helpers ════════════════ */
+const $ = (s,r=document)=>r.querySelector(s);
+const rng = seed => { let s=[...seed].reduce((a,c)=>a*31+c.charCodeAt(0)>>>0,7); return ()=> (s=(s*1664525+1013904223)>>>0)/4294967296; };
+
+/* Generated artwork: soft organic petals in the project's palette */
+function art(p, variant=0){
+  const r = rng(p.slug+variant), [c0,c1,c2,c3] = p.pal, id = p.slug.replace(/[^a-z]/g,'')+variant;
+  let g='';
+  for(let i=0;i<4;i++){
+    const x=r()*600, y=r()*400, rx=120+r()*140, ry=90+r()*120;
+    g+=`<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="${[c1,c2,c3,c1][i]}" opacity=".55"/>`;
+  }
+  let petals='';
+  const cx=300+(r()-.5)*160, cy=210+(r()-.5)*100, n=6+Math.floor(r()*3);
+  for(let i=0;i<n;i++){
+    const a=(360/n)*i+r()*20, s=.8+r()*.9, fill=`url(#g${id}${i%3})`;
+    petals+=`<path transform="translate(${cx} ${cy}) rotate(${a}) scale(${s})" d="M0 0C60 -90 170 -90 220 0C170 90 60 90 0 0Z" fill="${fill}" opacity="${.78+r()*.2}"/>`;
+  }
+  return `<svg class="art" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <filter id="b${id}" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="38"/></filter>
+      <linearGradient id="g${id}0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient>
+      <linearGradient id="g${id}1" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c3}"/><stop offset="1" stop-color="${c2}"/></linearGradient>
+      <linearGradient id="g${id}2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="${c0}"/><stop offset="1" stop-color="${c1}"/></linearGradient>
+    </defs>
+    <rect width="600" height="400" fill="${c0}"/>
+    <g filter="url(#b${id})">${g}</g>
+    <g style="mix-blend-mode:multiply">${petals}</g>
+  </svg>`;
+}
+const STAR = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 3v7M12 14v7M3 12h7M14 12h7M5.6 5.6l5 5M13.4 13.4l5 5M18.4 5.6l-5 5M10.6 13.4l-5 5"/></svg>`;
+/* picture-based project: v0 = whole image, v1-3 = detail crops of the same image */
+function pic(p,v){
+  const crop={0:'object-fit:contain',1:'object-fit:cover;object-position:0 25%;transform:scale(1.9);transform-origin:12% 30%',2:'object-fit:cover;object-position:100% 70%;transform:scale(2.2);transform-origin:90% 75%',3:'object-fit:cover;object-position:50% 40%;transform:scale(1.5);transform-origin:50% 45%'}[v];
+  return `<img src="${p.img}" alt="" style="position:absolute;inset:0;width:100%;height:100%;${crop}">`;
+}
+function face(p){
+  if(p.img) return `<div class="face" style="background:${p.bg}"><img class="pimg" src="${p.img}" alt="${p.title} website redesign shown on desktop, tablet and phone" loading="eager"></div>`;
+  return `<div class="face" style="--ci:${p.ink};--sh:${p.sh}">${art(p)}<div class="shade"></div><div class="sheen"></div>
+    <div class="mark">${STAR}<span>jenny.w</span></div>
+    <div class="ct">${p.title}<small>${p.category}</small></div>
+    <div class="cn">•••• ${p.year}</div></div>`;
+}
+
+/* ════════════════ text scramble (****  →  letters) ════════════════ */
+function scramble(el, segs, {delay=0, dur=1100, done}={}){
+  const chars=[]; segs.forEach(s=>[...s.t].forEach(c=>chars.push({c,cls:s.cls||''})));
+  const total=chars.length, t0=performance.now()+delay;
+  const esc=c=>c==='&'?'&amp;':c==='<'?'&lt;':c;
+  function frame(now){
+    const k=Math.max(0,Math.min(1,(now-t0)/dur)), n=Math.floor(k*total);
+    if(now<t0){requestAnimationFrame(frame);return}
+    let out='',cur=null,buf='';
+    const flush=()=>{ if(buf){ out+= cur===null?buf: `<${cur?'b':'span'}${cur===null?'':''}>${buf}</${cur?'b':'span'}>`; buf='';} };
+    let html='';
+    for(let i=0;i<Math.min(total,n+9);i++){
+      const ch=chars[i];
+      if(i<n){ html+= ch.cls==='b' ? `<b>${esc(ch.c)}</b>` : esc(ch.c); }
+      else   { html+= ch.c===' '||ch.c==='\n' ? ch.c : `<span class="st">*</span>`; }
+    }
+    el.innerHTML=html.replace(/\n/g,'<br>');
+    if(k<1) requestAnimationFrame(frame); else if(done) done();
+  }
+  requestAnimationFrame(frame);
+}
+function typeText(el,text,{delay=0,speed=38}={}){
+  let i=0; setTimeout(function step(){ el.textContent=text.slice(0,++i); if(i<text.length) setTimeout(step,speed); },delay);
+}
+
+/* ════════════════ HERO ════════════════ */
+const H1_FINAL='Designer of things<br>that <b>grow</b>';
+function fixH1(){
+  const h=$('#h1'), keep=h.innerHTML; h.style.minHeight='';
+  h.innerHTML=H1_FINAL; h.style.minHeight=h.offsetHeight+'px'; h.innerHTML=keep;
+}
+let rz; addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(fixH1,150)});
+function intro(){
+  fixH1();
+  document.body.classList.add('go');
+  scramble($('#h1'),[{t:'Designer of things\nthat '},{t:'grow',cls:'b'}],{delay:350,dur:1300,done(){
+    $('#h1').innerHTML='Designer of things<br>that <b class="gw">grow<svg viewBox="0 0 100 12" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M1 8C28 2 72 2 99 7" stroke="#F4A89C" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></b>';
+    const sv=$('#h1 .gw svg'); requestAnimationFrame(()=>requestAnimationFrame(()=>sv.classList.add('on')));
+  }});
+}
+window.addEventListener('load',()=>setTimeout(intro,120));
+
+/* ════════════════ sunflowers sway in the wind ════════════════ */
+(function(){
+  const hp=$('#hp'); if(!hp) return;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const F=[...hp.querySelectorAll('.fl')].map((el,i)=>({el,x:+el.dataset.cx,y:+el.dataset.cy,a:0,v:0,ph:i*1.7,infl:0}));
+  let raf=0,last=0,t=0,hover=false,lx=null,ly=null;
+  function step(now){
+    const dt=Math.min(.033,(now-(last||now))/1000); last=now; t+=dt; let energy=0;
+    for(const f of F){
+      const wind=hover?f.infl*(15*Math.sin(t*4.2+f.ph)+6*Math.sin(t*7.1+f.ph*2)):0;
+      const acc=-26*f.a-2.4*f.v+wind*26/6;
+      f.v+=acc*dt; f.a+=f.v*dt;
+      f.infl*=hover?.985:.9;
+      f.el.style.setProperty('--a',f.a.toFixed(2)+'deg');
+      energy+=Math.abs(f.a)+Math.abs(f.v)+f.infl;
+    }
+    if(energy>.05||hover) raf=requestAnimationFrame(step); else {raf=0;last=0;F.forEach(f=>f.el.style.setProperty('--a','0deg'))}
+  }
+  const wake=()=>{if(!raf){last=0;raf=requestAnimationFrame(step)}};
+  function toImg(e){const r=hp.getBoundingClientRect();return [(e.clientX-r.left)/r.width*1536,(e.clientY-r.top)/r.height*1024]}
+  function gust(x,y,vx,strength){
+    for(const f of F){
+      const d=Math.hypot(f.x-x,f.y-y), w=Math.exp(-Math.pow(d/280,2));
+      if(w<.02) continue;
+      f.infl=Math.max(f.infl,w); f.v+=Math.max(-1,Math.min(1,vx/40))*strength*w*(1+.25*Math.sin(f.ph));
+    }
+  }
+  if(reduce) return;
+  const host=hp.parentElement;
+  host.addEventListener('pointerenter',e=>{hover=true;const [x,y]=toImg(e);lx=x;ly=y;gust(x,y,30,60);wake()});
+  host.addEventListener('pointermove',e=>{
+    const [x,y]=toImg(e); const vx=lx==null?0:x-lx; lx=x;ly=y;
+    hover=true; gust(x,y,vx,34); wake();
+  });
+  host.addEventListener('pointerleave',()=>{hover=false;lx=null;wake()});
+  host.addEventListener('pointerdown',e=>{const [x,y]=toImg(e);gust(x,y,40,90);wake()});
+  /* a first, gentle breeze after the intro so visitors notice it moves */
+  setTimeout(()=>{F.forEach(f=>{setTimeout(()=>{f.v+=34;wake()},f.x/1536*700)})},2600);
+})();
+
+
+/* ════════════════ WORK GRID (scroll-linked tilt) ════════════════ */
+let active='All';
+const pills=$('#pills'), wgrid=$('#wgrid');
+CATS.forEach(c=>{
+  const b=document.createElement('button'); b.className='pill'+(c==='All'?' on':''); b.textContent=c==='All'?'All work':c;
+  b.onclick=()=>{active=c;[...pills.children].forEach(x=>x.classList.toggle('on',x===b));
+    wgrid.querySelectorAll('.wi').forEach(w=>w.classList.toggle('hide',!(c==='All'||w.dataset.cat===c)));update()};
+  pills.appendChild(b);
+});
+PROJECTS.forEach(p=>{
+  const a=document.createElement('a'); a.className='wi'; a.dataset.cat=p.category;
+  a.innerHTML=`<div class="leaves" aria-hidden="true"></div><div class="wcard">${face(p)}</div><div class="wmeta"><div><b>${p.title}</b><span>${p.label||p.category}</span></div><em>${p.year}</em></div>`;
+  a.addEventListener('click',()=>openDetail(p,$('.wcard',a)));
+  wgrid.appendChild(a);
+});
+
+
+/* ════════════════ leaves sprouting around hovered cards ════════════════ */
+(function(){
+  if(!matchMedia('(hover:hover)').matches) return;
+  const TONES=[['#DCE8F2','#8DB7D5'],['#8DB7D5','#1260B0'],['#FBD3CC','#F4A89C'],['#F4A89C','#E9708F'],['#F6DFA6','#EDA20A']];
+  let uid=0;
+  function leaf(w,h,tone,mid){
+    const id='lg'+(uid++);
+    return `<svg width="${w}" height="${h}" viewBox="0 0 40 60"><defs><linearGradient id="${id}" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="${tone[1]}"/><stop offset="1" stop-color="${tone[0]}"/></linearGradient></defs>
+      <path d="M20 59C3 45 1 19 20 1c19 18 17 44 0 58Z" fill="url(#${id})" opacity=".95"/>
+      <path d="M20 57V14" stroke="#fff" stroke-opacity=".55" stroke-width="1.2" stroke-linecap="round"/></svg>`;
+  }
+  function sprout(box){
+    box.innerHTML=''; const N=2+Math.floor(Math.random()*2), W=box.offsetWidth, H=box.offsetHeight, per=2*(W+H), t0=Math.random()*per;
+    for(let k=0;k<N;k++){
+      let t=(t0+((k+.1+Math.random()*.8)/N)*per)%per, x,y,nx,ny;       // random spot along the card outline, evenly spread
+      if(t<W){x=t;y=0;nx=0;ny=-1} else if((t-=W)<H){x=W;y=t;nx=1;ny=0} else if((t-=H)<W){x=W-t;y=H;nx=0;ny=1} else {t-=W;x=0;y=H-t;nx=-1;ny=0}
+      const out=Math.atan2(nx,-ny)*180/Math.PI;                 // 0deg = pointing up
+      const r=out+(Math.random()*50-25), size=42+Math.random()*32, pair=Math.random()<.55;
+      const el=document.createElement('div'); el.className='lf';
+      el.style.left=(x-nx*8)+'px'; el.style.top=(y-ny*8)+'px';
+      const tone=TONES[Math.floor(Math.random()*TONES.length)];
+      const g=document.createElement('div'); g.className='g';
+      g.style.setProperty('--r',r.toFixed(1)+'deg'); g.style.setProperty('--d',(Math.random()*.35).toFixed(2)+'s');
+      g.innerHTML=pair
+        ? `<div style="position:absolute;left:-${size*.42}px;bottom:0;transform:rotate(-26deg);transform-origin:50% 100%">${leaf(size*.8,size*1.2,tone)}</div><div style="position:absolute;left:${-size*.2}px;bottom:0;transform:rotate(28deg);transform-origin:50% 100%">${leaf(size*.9,size*1.35,TONES[(TONES.indexOf(tone)+2)%TONES.length])}</div>`
+        : `<div style="position:absolute;left:${-size*.4}px;bottom:0">${leaf(size*.8,size*1.2,tone)}</div>`;
+      el.appendChild(g); box.appendChild(el);
+    }
+  }
+  document.querySelectorAll('.wi').forEach(wi=>{
+    const box=wi.querySelector('.leaves'); let to;
+    wi.addEventListener('pointerenter',()=>{clearTimeout(to);sprout(box);void box.offsetWidth;wi.classList.add('grow')});
+    wi.addEventListener('pointerleave',()=>{wi.classList.remove('grow')});
+  });
+})();
+
+let tick=false;
+function update(){
+  const vh=innerHeight;
+  wgrid.querySelectorAll('.wi:not(.hide)').forEach(w=>{
+    const r=w.getBoundingClientRect();
+    const p=Math.max(0,Math.min(1,(vh*.98-r.top)/(vh*.55)));
+    w.style.setProperty('--p',p.toFixed(3));
+  });
+  // nav colour while over dark section
+  const wr=$('#work').getBoundingClientRect();
+  $('#nav').classList.toggle('scrolled',scrollY>24);
+  tick=false;
+}
+addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(update)}},{passive:true});
+addEventListener('resize',update); update();
+
+/* about reveal */
+(function(){const els=[document.getElementById('portrait'),document.querySelector('.about-r')].filter(Boolean);
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.25});els.forEach(el=>io.observe(el))})();
+
+/* ════════════════ cursor label ════════════════
+const cl=$('#cl');
+addEventListener('pointermove',e=>{cl.style.left=e.clientX+'px';cl.style.top=e.clientY+'px'});
+document.addEventListener('pointerover',e=>{
+  const on=e.target.closest('.wi');
+  cl.classList.toggle('on',!!on);
+  cl.classList.toggle('dark-cl',!!e.target.closest('.wi'));
+});
+
+/* ════════════════ DETAIL with shared-element morph ════════════════ */
+const detail=$('#detail'), morph=$('#morph'), back=$('#back');
+let lastRect=null;
+
+function storyHTML(p){
+  const t=p.story;
+  return `<section class="cs-hero" style="background:${p.bg}"><div class="cs-in">
+      <div class="cs-eye"><i></i>${t.name} · ${p.year}</div>
+      <h1 class="cs-title">${t.title}</h1>
+      <p class="cs-over">${t.overview}</p></div>
+      <div class="cs-shot"><img src="${p.img}" alt="${t.name}: the redesigned ERI website shown on desktop, tablet and mobile"></div></section>
+    <div class="cs-body">
+      <div class="cs-role"><h2>My role</h2><p>${t.role}</p></div>
+      <section class="cs-sec"><h2>The challenge</h2><p>${t.challenge}</p></section>
+      <section class="cs-sec"><h2>Key design <em>decisions</em></h2><div class="cs-dec">${t.decisions.map((d,i)=>`<div><span class="n">0${i+1}</span><h3>${d.h}</h3><p>${d.p}</p></div>`).join('')}</div></section>
+      <section class="cs-sec"><h2>Outcomes</h2><div class="cs-out">${t.outcomes.map(o=>`<div><b>${o.b}</b><span>${o.t}</span></div>`).join('')}</div></section>
+    </div>`;
+}
+function openDetail(p,el){
+  cl.classList.remove('on');
+  const r=el.getBoundingClientRect(); lastRect=r;
+  morph.style.background=p.bg||''; morph.innerHTML=p.img?pic(p,0):art(p);
+  Object.assign(morph.style,{display:'block',transition:'none',left:r.left+'px',top:r.top+'px',width:r.width+'px',height:r.height+'px',borderRadius:'8px'});
+  const story=!!p.story; $('#dhero').style.display=story?'none':''; document.querySelector('.d-body').style.display=story?'none':''; const ds=$('#dstory'); ds.style.display=story?'block':'none'; if(story){ds.innerHTML=storyHTML(p)}
+  $('#dhero').classList.toggle('light',!!p.img); $('#dhero').style.background=p.bg||''; $('#dart').style.background=''; $('#dart').innerHTML=p.img?pic(p,0):art(p,1).replace('class="art"','class="art" style="position:absolute;inset:0;width:100%;height:100%"');
+  $('#deye').textContent=`${p.label||p.category}  ·  ${p.year}`;
+  $('#dtitle').textContent=p.title;
+  $('#dsub').textContent=p.img?'':[p.place,p.client].filter(Boolean).join('  ·  ');
+  $('#dmeta').innerHTML=[['Client',p.client],['Role',p.role],['Year',p.year],['Location',p.place]].filter(x=>x[1]).map(([l,v])=>`<div><label>${l}</label><strong>${v}</strong></div>`).join('');
+  $('#ddesc').innerHTML=p.desc.split('\n\n').map(t=>`<p>${t}</p>`).join('');
+  $('#dgal').innerHTML=p.img?'':[2,3,4].map(v=>`<div>${art(p,v)}</div>`).join('');
+  detail.scrollTop=0; detail.classList.add('open'); detail.classList.remove('d-open');
+  back.classList.add('show'); document.body.style.overflow='hidden';
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    morph.style.transition='left .9s var(--expo),top .9s var(--expo),width .9s var(--expo),height .9s var(--expo),border-radius .9s var(--expo),opacity .4s ease';
+    Object.assign(morph.style,{left:0,top:0,width:'100vw',height:'100vh',borderRadius:'0px'});
+  }));
+  setTimeout(()=>{detail.classList.add('d-open')},650);
+  setTimeout(()=>{morph.style.opacity='0'},900);
+  setTimeout(()=>{morph.style.display='none';morph.style.opacity='1'},1350);
+}
+function closeDetail(){
+  detail.classList.remove('d-open');
+  detail.style.transition='opacity .45s'; detail.style.opacity='0';
+  setTimeout(()=>{
+    detail.classList.remove('open'); detail.style.opacity=''; detail.style.transition='';
+    back.classList.remove('show'); document.body.style.overflow='';
+  },450);
+}
+back.onclick=closeDetail;
+addEventListener('keydown',e=>{if(e.key==='Escape'&&detail.classList.contains('open'))closeDetail()});
+
+/* ════════════════ contact ════════════════ */
+$('#mailtxt').textContent=SITE.email;
+$('#copy').onclick=async e=>{
+  try{await navigator.clipboard.writeText(SITE.email);e.target.textContent='Copied ✓'}catch(_){e.target.textContent='Select & copy'}
+  setTimeout(()=>e.target.textContent='Copy',1800);
+};
+</script>
+</body>
+</html>
