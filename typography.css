@@ -1,0 +1,39 @@
+/* Portfolio typography — Fraunces + DM Sans */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&display=swap');
+:root {
+  --font-heading: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', Arial, sans-serif;
+  --type-hero: clamp(2.5rem, 4.2vw, 4.5rem);
+  --type-h2: clamp(1.875rem, 3vw, 2.75rem);
+  --type-h3: clamp(1.25rem, 2vw, 1.625rem);
+  --type-body: 1.0625rem;
+  --type-small: .8125rem;
+}
+body { font-family: var(--font-body); }
+button, input, textarea, select { font-family: var(--font-body); }
+h1, h2 { font-family: var(--font-heading); font-weight: 400; }
+h1 { font-size: var(--type-hero); font-weight: 300; line-height: 1.1; letter-spacing: -.035em; }
+h1 strong, h1 b { font-weight: 700; }
+h2 { font-size: var(--type-h2); line-height: 1.2; letter-spacing: -.02em; }
+h3 { font-family: var(--font-body); font-size: var(--type-h3); font-weight: 600; line-height: 1.35; }
+/* Optional classes: map these to existing elements rather than changing layout. */
+.type-brand { font-family: var(--font-heading); font-size: 1.375rem; font-weight: 400; }
+.type-body { font-family: var(--font-body); font-size: var(--type-body); font-weight: 400; line-height: 1.7; }
+.type-keywords { font-family: var(--font-body); font-size: .75rem; font-weight: 500; letter-spacing: .08em; }
+.type-nav { font-family: var(--font-body); font-size: .875rem; font-weight: 500; }
+.type-button { font-family: var(--font-body); font-size: .9375rem; font-weight: 500; }
+.type-caption { font-family: var(--font-body); font-size: var(--type-small); font-weight: 400; }
+
+/* ───────── Adapters for the existing site (selectors from index.html) ─────────
+   Sizes/line-heights of the existing layout are kept on purpose (the hero is sized to fit
+   the viewport); family, weight and tracking follow the tokens above. */
+.logo { font-family: var(--font-heading); font-weight: 400; }                       /* wordmark */
+.nav-r a, .btn, .cta { font-family: var(--font-body); font-weight: 500; }           /* nav + buttons */
+.kw span { font-family: var(--font-body); font-weight: 500; letter-spacing: .08em; } /* keyword row */
+.h1 { font-family: var(--font-heading); font-weight: 300; letter-spacing: -.035em; }
+.h1 b, .h1 strong { font-weight: 700; }                                             /* "grow" */
+.work h2, .about h2, .about-r h2, .contact h2, .cs-sec > h2, .cs-role h2 {
+  font-family: var(--font-heading); font-weight: 400; letter-spacing: -.02em; }
+.d-title, .cs-title, .cs-dec h3, .wmeta b { font-family: var(--font-heading); }     /* project headings */
+.sup-h { font-family: var(--font-body); font-weight: 600; }                         /* h3 token */
+.about .about-r p, .cs-over, .cs-role p, .cs-sec > p, .cs-dec p, .cs-out span { font-family: var(--font-body); }
