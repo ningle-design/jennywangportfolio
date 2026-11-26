@@ -325,7 +325,7 @@ footer{background:var(--moss);color:rgba(255,255,255,.5);text-align:center;font-
 .cs-shot.cover{max-width:1000px}
 .cs-cover .pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .cs-cover{background:#0A2373;position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;box-shadow:0 30px 50px -34px rgba(10,35,115,.45)}
-.cs-facts{display:grid;grid-template-columns:1fr 1.15fr 1.25fr 1.5fr .8fr;gap:22px 24px;background:#fff;border-radius:22px;padding:30px 38px;margin-top:-40px;position:relative;z-index:2;box-shadow:0 26px 44px -30px rgba(10,35,115,.35)}
+.cs-facts{display:grid;grid-template-columns:var(--cols,1fr 1.15fr 1.25fr 1.5fr .8fr);gap:22px 24px;background:#fff;border-radius:22px;padding:30px 38px;margin-top:-40px;position:relative;z-index:2;box-shadow:0 26px 44px -30px rgba(10,35,115,.35)}
 .cs-facts label{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(10,35,115,.55);margin-bottom:6px}
 .cs-facts strong{font-weight:500;color:var(--ink);font-size:1rem;line-height:1.35}
 .cs-facts strong.big{font-family:var(--font-heading,'Fraunces',Georgia,serif);font-weight:400;font-size:2rem;line-height:1;color:#DB5A7D}
@@ -495,6 +495,8 @@ const PROJECTS = [
       name:"ERI Website Redesign",
       title:"Rebuilding ERI’s website around its climate work and resources",
       overview:"A full WordPress rebuild that introduced a new visual identity across the site and reorganised how visitors learn about ERI’s climate work and find practical resources.",
+      factCols:"1.9fr .55fr .9fr 2.2fr",
+      facts:[{l:"Client",v:"Exponential Roadmap Initiative"},{l:"Year",v:"2024"},{l:"Platform",v:"WordPress"},{l:"My role",v:"Web Designer · WordPress Developer"}],
       roleSub:"Web Designer · WordPress Developer",
       roleItems:[
         {l:"Website visual identity",t:"Developed the colour palette and banner system for the redesigned site."},
@@ -516,7 +518,7 @@ const PROJECTS = [
       ]
     } },
   { slug:"t11-terminal", title:"T11 Terminal | 14th CSSA Stockholm Singles' Day", category:"Event", label:"Event Production &amp; Art Direction", sub:"CSSA Sweden · 130+ attendees", year:2026, place:"Homage, Stockholm",
-    client:"CSSA Sweden", role:"Event production, art direction", bg:"#DCE8F2", cover:true, coverImg:"hero.webp",
+    client:"CSSA Sweden", role:"Event production, art direction", bg:"#DCE8F2", cover:true, coverImg:"t11/hero.webp",
     ink:"#fff", sh:0.2, pal:["#DCE8F2","#1260B0","#0A2373","#8DB7D5"],
     desc:"An airport-terminal-themed singles party for more than 130 attendees, from concept and promotion to on-site delivery.",
     story:{
@@ -732,7 +734,7 @@ function storyHTML(p){
   const t=p.story, paras=x=>x.split('\n\n').map(q=>`<p>${q}</p>`).join('');
   const shot=p.cover?`<div class="cs-shot cover"><div class="cs-cover">${coverHTML(p)}</div></div>`
     :`<div class="cs-shot"><img src="${p.img}" alt="${t.name}: the redesigned ERI website shown on desktop, tablet and mobile"></div>`;
-  const facts=t.facts?`<div class="cs-facts">${t.facts.map(f=>`<div><label>${f.l}</label><strong${f.big?' class="big"':''}>${f.v}</strong></div>`).join('')}</div>`:'';
+  const facts=t.facts?`<div class="cs-facts"${t.factCols?` style="--cols:${t.factCols}"`:''}>${t.facts.map(f=>`<div><label>${f.l}</label><strong${f.big?' class="big"':''}>${f.v}</strong></div>`).join('')}</div>`:'';
   const role=t.facts?`<section class="cs-sec"><h2>My <em>role</em></h2>${t.roleItems?roleList(t):paras(t.role)}</section>`:'';
   const chal=`<section class="cs-sec"><h2>The challenge</h2><p>${t.challenge}</p></section>`;
   return `<section class="cs-hero" style="background:${p.bg}"><div class="cs-in">
