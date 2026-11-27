@@ -76,9 +76,10 @@ nav.dark .cta{background:#fff;color:var(--ink)}
 .arrow:hover{opacity:1}
 .arrow svg{width:20px;height:20px}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+.th{font-size:.667em}
 .gw{position:relative;display:inline-block;isolation:isolate}
 .gw svg{position:absolute;z-index:-1;left:-6%;bottom:.04em;width:112%;height:.2em;overflow:visible;pointer-events:none}
-.gw svg path{stroke-dasharray:140;stroke-dashoffset:140;transition:stroke-dashoffset 1s var(--expo)}
+.gw svg path{stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 1s var(--expo)}
 .gw svg.on path{stroke-dashoffset:0}
 
 /* reveal helpers for intro */
@@ -323,7 +324,7 @@ footer{background:var(--moss);color:rgba(255,255,255,.5);text-align:center;font-
 .cs-sec>h2 em{color:#DB5A7D}
 .cs-sec>p{max-width:720px;color:#0A4F98;font-size:var(--type-body,1.0625rem);line-height:1.85}
 .cs-shot.cover{max-width:1000px}
-.cs-cover .pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.cs-cover .pimg{-webkit-mask-image:none;mask-image:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .cs-cover{background:#0A2373;position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;box-shadow:0 30px 50px -34px rgba(10,35,115,.45)}
 .cs-facts{display:grid;grid-template-columns:var(--cols,1fr 1.15fr 1.25fr 1.5fr .8fr);gap:22px 24px;background:#fff;border-radius:22px;padding:30px 38px;margin-top:-40px;position:relative;z-index:2;box-shadow:0 26px 44px -30px rgba(10,35,115,.35)}
 .cs-facts label{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(10,35,115,.55);margin-bottom:6px}
@@ -331,6 +332,140 @@ footer{background:var(--moss);color:rgba(255,255,255,.5);text-align:center;font-
 .cs-facts strong.big{font-family:var(--font-heading,'Fraunces',Georgia,serif);font-weight:400;font-size:2rem;line-height:1;color:#DB5A7D}
 .cs-facts+.cs-sec{margin-top:80px}
 .cs-sec>p+p{margin-top:16px}
+.cs-dec .n.s{font-family:var(--font-body,'DM Sans',Arial,sans-serif);font-style:normal;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding-top:.6rem}
+.cs-media video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;background:#0A2373;box-shadow:0 18px 30px -22px rgba(10,35,115,.45)}
+.cs-media.m1 img{max-height:460px;object-fit:cover}
+.cs-note{grid-column:1/-1;max-width:640px;color:#0A4F98;font-size:var(--type-body,1.0625rem);line-height:1.8;margin-top:8px}
+.cs-res{display:flex;flex-direction:column;gap:6px}
+.cs-res strong{font-family:var(--font-heading,'Fraunces',Georgia,serif);font-weight:400;font-size:clamp(3rem,6vw,4.6rem);line-height:1;color:#DB5A7D;letter-spacing:-.02em}
+.cs-res span{font-size:1.05rem;color:var(--ink)}
+.cs-res em{font-style:normal;margin-top:10px;color:#0A4F98;line-height:1.5}
+
+.cs-pair{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:6vw;width:90vw;max-width:1700px;margin:20px auto 0;align-items:start}
+.cs-pair .cs-sec{margin-top:0}
+.cs-pair .cs-list li{grid-template-columns:190px 1fr}.cs-pair .cs-sec>p{max-width:none}
+.cs-body2{padding-top:0}
+
+.cs-media figure,.stg .cs-media figure,.rd-fp{opacity:0;filter:blur(14px);transform:translateY(24px);transition:opacity 1.6s cubic-bezier(.16,1,.3,1),filter 1.6s cubic-bezier(.16,1,.3,1),transform 1.6s cubic-bezier(.16,1,.3,1)}
+.cs-media figure.in,.rd-fp.in{opacity:1;filter:blur(0);transform:none}
+.cs-media figure.miss{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.cs-media figure,.rd-fp{opacity:1;filter:none;transform:none;transition:none}}
+.cs-band{background:#0A2373;padding:110px 0 90px;margin-top:20px}
+.cs-credits{width:90vw;max-width:1700px;margin:90px auto 0;padding-top:26px;border-top:1px solid rgba(253,243,230,.25);display:grid;grid-template-columns:auto 1fr;gap:6px 48px;align-items:baseline}
+.cs-credits h4{grid-row:1/3;font-family:var(--font-body,'DM Sans',Arial,sans-serif);font-weight:500;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#F4A89C}
+.cs-credits p{margin:0;font-size:.92rem;line-height:1.7;color:#FDF3E6}
+@media(max-width:700px){.cs-credits{grid-template-columns:1fr}.cs-credits h4{grid-row:auto;margin-bottom:6px}}
+.cs-outw{width:90vw;max-width:1700px;margin:0 auto}
+.cs-outw .cs-sec{margin-top:100px}
+.cs-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(253,243,230,.25)}
+.cs-strip>div{padding:34px 28px 6px;border-left:1px solid rgba(253,243,230,.25)}
+.cs-strip>div:first-child{padding-left:0;border-left:0}
+.cs-strip strong{display:block;font-family:var(--font-heading,'Fraunces',Georgia,serif);font-weight:400;font-size:clamp(2.6rem,4.6vw,4rem);line-height:1;color:#F4A89C;letter-spacing:-.02em}
+.cs-strip span{display:block;margin-top:14px;color:#FDF3E6;line-height:1.7;font-size:var(--type-body,1.0625rem);max-width:19em}
+@media(max-width:700px){.cs-strip{grid-template-columns:1fr}.cs-strip>div{border-left:0;border-top:1px solid rgba(253,243,230,.2);padding:26px 0 8px}.cs-strip>div:first-child{border-top:0}}
+
+.cs-band .cs-sec>h2{color:#FDF3E6}
+.cs-band .cs-sec>p,.cs-band .cs-dec p{color:#FDF3E6}
+@media(max-width:700px){.cs-outw .cs-out .stat{grid-template-columns:1fr;gap:14px;padding:34px 28px}}
+.cs-band .cs-pair{margin-top:0}
+.cs-band h2,.cs-band .cs-dec h3,.cs-band .cs-sec>h2{color:#FDF3E6}
+.cs-band .cs-dec,.cs-band .cs-dec>div{border-color:rgba(253,243,230,.2)}
+.cs-band .cs-dec .n{color:#F4A89C}
+@media(max-width:900px){.cs-band{padding:72px 0 80px}}
+.cs-pair2.solo{grid-template-columns:1fr}.cs-pair2.solo .cs-dec .cs-media{max-width:1000px}.cs-band figcaption{color:rgba(253,243,230,.7)}.cs-pair2{margin-top:0}.cs-pair2 .cs-sec{margin-top:0}.cs-pair2 .cs-dec>div{grid-template-columns:50px minmax(0,.7fr) minmax(0,1.3fr);gap:24px}.cs-pair2 .cs-dec .cs-media{grid-column:2/-1}
+@media(max-width:900px){.cs-pair2 .cs-dec>div{grid-template-columns:44px 1fr;gap:10px 16px}.cs-pair2 .cs-dec p,.cs-pair2 .cs-dec .cs-media{grid-column:2}}
+
+.cmp{width:60vw;max-width:1100px;margin:110px auto 100px}@media(max-width:900px){.cmp{width:90vw}}
+.cmp h2{font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:clamp(1.8rem,3vw,2.6rem);color:#0A2373;margin-bottom:10px}.cmp h2 em{color:#DB5A7D}
+.cmp .cmp-sub{color:#0A4F98;max-width:62ch;margin-bottom:26px}
+.cmp-pills{display:flex;gap:10px;align-items:center;margin-bottom:18px;flex-wrap:wrap;font-size:.85rem;color:#0A4F98}
+.cmp-pill{border:1.5px solid rgba(10,79,152,.3);background:none;color:#0A2373;font:600 .85rem 'DM Sans',sans-serif;padding:7px 16px;border-radius:99px;cursor:pointer;transition:.3s}
+.cmp-pill.sel{background:#0A2373;color:#FDF3E6;border-color:#0A2373}
+.cmp-bw{background:#fff;border-radius:14px;box-shadow:0 30px 70px -30px rgba(10,35,115,.35),0 2px 10px rgba(10,35,115,.08);overflow:hidden;border:1px solid rgba(10,79,152,.12)}
+.cmp-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#F1ECE3}.cmp-bar i{width:10px;height:10px;border-radius:50%;background:#D8CFC1}.cmp-bar span{margin-left:14px;font-size:.72rem;color:#7a8aa8;background:#fff;border-radius:99px;padding:3px 16px}
+.cmp-v{position:relative;aspect-ratio:2996/1484;background:#111;overflow:hidden;cursor:ew-resize;user-select:none;touch-action:pan-y}
+.cmp-v img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top;display:block}
+.cmp-v img[src*="2023"]{object-fit:contain;background:#fff}
+.cmp-v img[src*='2020']{object-fit:contain;background:#000}
+.cmp-h{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;box-shadow:0 0 14px rgba(0,0,0,.4);z-index:3}
+.cmp-h::after{content:"‹ ›";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:#fff;color:#0A2373;display:grid;place-items:center;font-weight:700;letter-spacing:2px;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.cmp-l{position:absolute;bottom:14px;z-index:4;font-family:'Fraunces',Georgia,serif;font-size:1.3rem;color:#fff;background:rgba(10,35,115,.78);padding:4px 16px;border-radius:99px;backdrop-filter:blur(6px)}.cmp-l.a{left:14px}.cmp-l.b{right:14px}
+
+.cs-pair+.rd{margin-top:130px}
+.rd-blk.wide{grid-template-columns:1fr;gap:40px}.rd-blk.wide .rd-txt p{max-width:62ch}.rd-blk.wide .rd-fig{gap:44px}
+.rd-blk.wide .rd-shot{max-width:none}.rd-cmp-wrap{width:100%;max-width:800px}.rd-cmp-lab{display:flex;justify-content:space-between;margin-top:14px}.rd-cmp-lab .cmp-l{position:static;background:none;backdrop-filter:none;padding:0;color:#FDF3E6;font-size:1.4rem}.rd-cmp .cmp-v{cursor:ew-resize;background:#fff}.rd-blk.wide .rd-shot:not(.rd-cmp){max-width:820px}
+.rd-hint{color:#0A4F98;font-size:.9rem;opacity:.8;margin-top:12px}
+.rail{scrollbar-width:none}.rail::-webkit-scrollbar{display:none}
+.rd.navy .rd-hint{color:#FDF3E6}.rd.navy+.rd-strip{padding-top:0}.rd.navy+.rd-strip .rd-in{border-top:1px solid rgba(253,243,230,.2);padding-top:90px}
+.rd.mint h2,.rd.mint .rd-txt h3,.rd.mint .rd-lead,.rd.mint .rd-txt p,.rd.mint .rd-hint{color:#0A2373}
+.rd.mint h2 em,.rd.mint .rd-n{color:#0A2373}
+.rd.mint .rd-blk{border-color:rgba(10,35,115,.25)}
+.rd.mint .rd-open{color:#0A2373}.rd.mint .rd-open:hover{background:#0A2373;color:#FDF3E6}
+.rd .cmp-bar{background:#FDF3E6}.rd .cmp-bar span{background:#fff}
+.rd.mint .cmp-bw{box-shadow:0 30px 60px -30px rgba(10,35,115,.45)}
+.rd{padding:100px 0 110px}.rd.mint{background:#F4A89C}.rd.navy{background:#0A2373;color:#FDF3E6}
+.rd-in{width:90vw;max-width:1500px;margin:0 auto}
+.rd h2,.rd-out h2{font-family:'Fraunces',Georgia,serif;font-weight:400;letter-spacing:-.02em;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.1;color:#0A2373;margin-bottom:16px}.rd h2 em,.rd-out h2 em{color:#DB5A7D}
+.rd.navy h2{color:#FDF3E6}.rd.navy h2 em{color:#F4A89C}
+.rd h2 .rd-sand{color:#E9D3B0}.rd h2 .rd-pk{color:#DB5A7D;font-style:italic}
+.rd-strip .cs-strip strong{font-size:clamp(1.5rem,2.3vw,2.1rem);line-height:1.15;letter-spacing:-.01em}
+.rd-lead{max-width:62ch;color:#0A4F98;margin-bottom:56px;font-size:1.0625rem}.rd.navy .rd-lead{color:#FDF3E6}
+.rd-blk{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:6vw;align-items:start;padding:60px 0;border-top:1px solid rgba(10,79,152,.2)}
+.rd.navy .rd-blk{border-color:rgba(253,243,230,.2)}
+.rd-n{font-family:'Fraunces',Georgia,serif;font-style:italic;color:#DB5A7D;font-size:1.3rem}.rd.navy .rd-n{color:#F4A89C}
+.rd-txt h3{font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:clamp(1.5rem,2.2vw,2rem);color:#0A2373;margin:6px 0 16px;line-height:1.2}.rd.navy .rd-txt h3{color:#FDF3E6}
+.rd-txt p{color:#0A4F98;max-width:44ch;line-height:1.75}.rd.navy .rd-txt p{color:#FDF3E6}
+.rd-open,.rd-more{margin-top:26px;border:1.5px solid currentColor;background:none;color:#0A2373;font:600 .85rem 'DM Sans',sans-serif;padding:9px 18px;border-radius:99px;cursor:pointer;transition:.3s}.rd.navy .rd-open{color:#FDF3E6}
+.rd-open:hover,.rd-more:hover{background:#0A2373;color:#FDF3E6;border-color:#0A2373}.rd.navy .rd-open:hover{background:#FDF3E6;color:#0A2373}
+.rd-fig{display:flex;flex-direction:column;gap:30px;align-items:flex-start}
+.rd-shot{width:100%;max-width:660px}.rd-shot img{display:block;width:100%;height:auto}
+.rd-hrow{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;margin-bottom:40px}.rd-more{margin-top:26px}
+.rail{display:flex;gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:5vw;padding:0 5vw 24px;scrollbar-width:thin}
+.rail.in-fig{padding:0 0 18px;width:100%;max-width:660px;scroll-padding-left:0}.rail.in-fig .rail-i{flex-basis:86%}
+.rail-i{flex:0 0 62%;scroll-snap-align:start;margin:0}.rail-i figcaption{margin-top:14px;color:#0A4F98;font-size:.9rem}
+.rail-y{margin-left:auto;font-family:'Fraunces',Georgia,serif;font-size:1.05rem;color:#DB5A7D}
+.rail-i .cmp-bw img{display:block;width:100%;height:auto}
+.rd-hist{padding-top:30px}.rd-out{padding:100px 0 120px}.rd-out p{max-width:60ch;color:#0A4F98;font-size:1.15rem;line-height:1.8}
+.rd-strip{padding:90px 0 100px}.rd-strip .cs-sec{margin-top:0}
+#rdModal{position:fixed;inset:0;z-index:99999;background:rgba(10,35,115,.92);display:none;flex-direction:column}#rdModal.on{display:flex}
+.rdm-bar{display:flex;justify-content:space-between;align-items:center;padding:16px 4vw;color:#FDF3E6;font-family:'Fraunces',Georgia,serif;font-size:1.2rem}.rdm-bar button{background:#FDF3E6;color:#0A2373;border:0;border-radius:99px;padding:8px 18px;font:600 .85rem 'DM Sans',sans-serif;cursor:pointer}
+.rdm-body{flex:1;overflow:auto;display:flex;justify-content:center;padding:0 4vw 40px}.rdm-body img{width:min(100%,940px);image-rendering:auto;height:auto;align-self:flex-start;background:#fff;border-radius:10px}
+@media(max-width:900px){.rd-blk{grid-template-columns:1fr;gap:30px}.rail-i{flex-basis:86%}}
+.cs-stages{width:90vw;max-width:1700px;margin:110px auto 0}
+.cs-stages>h2{font-family:var(--font-heading,'Fraunces',Georgia,serif);font-weight:400;letter-spacing:-.02em;font-size:clamp(2.2rem,4.4vw,3.8rem);color:var(--ink);line-height:1.05;margin-bottom:56px}
+.cs-stages>h2 em{color:#DB5A7D}
+.stg{padding:56px 0 90px;border-top:1px solid rgba(10,35,115,.14)}
+.stg-h{display:grid;grid-template-columns:200px minmax(0,.9fr) minmax(0,1.3fr);gap:20px 32px;align-items:baseline;margin-bottom:48px;max-width:1300px}
+.stg-h span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#DB5A7D}
+.stg-h h3{font-family:var(--font-heading,'Fraunces',Georgia,serif);font-weight:400;font-size:1.6rem;line-height:1.2;color:var(--ink)}
+.st4 .cs-note h3{font-family:var(--font-heading,'Fraunces',Georgia,serif);font-weight:400;font-size:1.45rem;line-height:1.25;color:var(--ink);margin-bottom:12px}
+.stg-p p+p{margin-top:14px}
+.stg-p p{color:#0A4F98;line-height:1.8;font-size:var(--type-body,1.0625rem)}
+.stg-stats{grid-column:3;display:flex;gap:44px;margin-top:6px}
+.stg-stats strong{display:block;font-family:var(--font-heading,'Fraunces',Georgia,serif);font-weight:400;font-size:clamp(2.2rem,3.6vw,3rem);line-height:1;color:#DB5A7D;letter-spacing:-.02em}
+.stg-h .stg-stats span{display:block;margin-top:8px;color:#0A4F98;font-size:.95rem;line-height:1.4;text-transform:none;letter-spacing:0}
+@media(max-width:900px){.stg-stats{grid-column:1}}
+.stg-h p{color:#0A4F98;line-height:1.8;font-size:var(--type-body,1.0625rem)}
+.cs-media.st{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;margin:0;align-items:start}
+.cs-media.st figure{margin:0;position:relative}
+.cs-media.st img,.cs-media.st video{width:100%;display:block}
+.st1 .poster{grid-column:1/6;grid-row:1/4}
+.st1 .teaser{grid-column:6/13;grid-row:1}
+.st1 .venue{grid-column:8/13;grid-row:2;margin-top:-6px}
+.st1 .venue img{aspect-ratio:16/9;object-fit:cover}
+.st2 figure:nth-of-type(1){grid-column:1/10;grid-row:1}
+.st2 figure:nth-of-type(2){grid-column:8/13;grid-row:1;margin-top:290px;z-index:2}
+.st2 figure:nth-of-type(2) img{aspect-ratio:4/3;object-fit:cover}
+.st3 .rec{grid-column:1/7;grid-row:2;margin-top:-30px}
+.st3 .ul{grid-column:8/13;grid-row:2;margin-top:60px}
+.st3 .pz{grid-column:1/7;grid-row:1}
+.st3 .gt{grid-column:8/13;grid-row:1;margin-top:90px}
+.st4 .grp{grid-column:1/8;grid-row:1}
+.st4 .cs-note{grid-column:9/13;grid-row:1;align-self:center;margin:0;max-width:none}
+.st4 .dep{grid-column:3/12;grid-row:2;margin-top:30px}
+.flag-t{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#DB5A7D;margin-bottom:12px}
+.st4 .cs-note p{margin:0;color:#0A4F98;line-height:1.8}.st4 .cs-note p+p{margin-top:14px}
+@media(max-width:900px){.cs-pair{grid-template-columns:1fr;gap:0}.cs-pair .cs-sec{margin-top:72px}.cs-pair .cs-sec:first-child{margin-top:0}.cs-pair .cs-list li{grid-template-columns:1fr}.stg-h{grid-template-columns:1fr}.cs-media.st{display:flex;flex-direction:column;gap:22px}.cs-media.st figure{transform:none!important;margin-top:0!important}.cs-stages{width:92vw}}
 .cs-role.list{grid-template-columns:1fr;gap:18px}
 .cs-role .cs-sub{font-weight:500;color:var(--ink);font-size:1rem;letter-spacing:.02em;line-height:1.5;margin:0 0 14px}
 .cs-role .cs-list li{padding:14px 0;grid-template-columns:200px 1fr}
@@ -377,6 +512,33 @@ footer{background:var(--moss);color:rgba(255,255,255,.5);text-align:center;font-
 }
 </style>
 <link rel="stylesheet" href="typography.css">
+<style id="hero-b">
+@media(min-width:901px){
+.hero{display:block;padding:0;min-height:max(100vh,640px);min-height:max(100svh,640px)}
+.copy,.module{display:contents}
+.sp{display:none}
+.hero::before{content:"";position:absolute;left:46%;top:14%;width:min(42vw,640px);height:78%;margin-left:calc(min(42vw,640px)/-2);border-radius:58% 42% 55% 45% / 48% 56% 44% 52%;background:radial-gradient(60% 55% at 38% 42%,#B9D3EC 0%,rgba(185,211,236,.75) 45%,rgba(205,223,241,0) 100%);filter:blur(34px);z-index:0;opacity:0;transform:scale(.9) rotate(-6deg);transition:opacity 1.8s ease .1s,transform 2.4s var(--expo) .1s;animation:blobA 16s ease-in-out infinite alternate}
+.hero::after{content:"";position:absolute;left:46%;top:30%;width:min(26vw,400px);height:52%;margin-left:calc(min(26vw,400px)*.15);border-radius:44% 56% 40% 60% / 58% 44% 56% 42%;background:radial-gradient(60% 60% at 55% 50%,rgba(10,79,152,.32) 0%,rgba(10,79,152,0) 100%);filter:blur(42px);z-index:0;opacity:0;transition:opacity 2.2s ease .5s;pointer-events:none;animation:blobB 20s ease-in-out infinite alternate}
+.go .hero::before{opacity:1;transform:none}.go .hero::after{opacity:1}
+@keyframes blobA{to{border-radius:46% 54% 42% 58% / 56% 42% 58% 44%;translate:2% -2%}}@keyframes blobB{to{border-radius:56% 44% 58% 42% / 44% 58% 42% 56%;translate:-4% 3%}}
+.stage{position:absolute;inset:0;z-index:2;pointer-events:none}
+.hero-photo{left:0;right:0;top:4vh;bottom:0;display:block}
+.hero-photo img.cut{left:0;right:0;margin:0 auto;height:92%;translate:calc(-2vw + var(--mx,0)*12px) calc(var(--my,0)*6px);transition:translate .9s var(--expo)}
+.hero-photo img.bloom{left:0;right:0;margin:0 auto;height:70%;translate:calc(var(--mx,0)*-8px) 0;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%),linear-gradient(180deg,transparent 0,#000 16%);mask-image:linear-gradient(90deg,transparent 0,#000 12%,#000 88%,transparent 100%),linear-gradient(180deg,transparent 0,#000 16%);z-index:-1;transition:translate .9s var(--expo)}
+.kw{position:absolute;z-index:6;left:5vw;top:clamp(72px,10vh,100px);margin:0}
+.h1{position:absolute;z-index:1;left:5vw;right:5vw;top:clamp(120px,19vh,190px);margin:0;max-width:none;font-size:clamp(2.86rem,6.11vw,6.37rem);line-height:1.02;min-height:0;pointer-events:none;translate:calc(var(--mx,0)*-6px) 0;transition:translate .9s var(--expo)}
+.h1 .ln2:nth-child(1) i{width:4.7em}
+.h1 .ln2:nth-child(2){position:absolute;right:0;top:.55em;font-size:.667em;text-align:right;line-height:1}
+.sub{position:absolute;z-index:6;left:5vw;bottom:clamp(110px,17vh,170px);width:min(25vw,360px);margin:0;padding:16px 18px;border-radius:14px;background:rgba(253,243,230,.62);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.mods{position:absolute;z-index:6;right:5vw;bottom:clamp(110px,17vh,170px);margin:0;align-items:flex-end;max-width:26vw}
+.chip.c1{animation:drift 7s ease-in-out 2.2s infinite}
+.chip.c2{animation:drift 8s ease-in-out 3s infinite reverse}
+@keyframes drift{0%,100%{translate:0 0}50%{translate:0 -7px}}
+.btns{position:absolute;z-index:6;left:0;right:0;bottom:clamp(28px,5vh,48px);justify-content:center}
+.scroll{position:absolute;z-index:6;left:5vw;bottom:clamp(28px,5vh,48px)}
+}
+@media(prefers-reduced-motion:reduce){.chip.c1,.chip.c2{animation:none}}
+</style>
 </head>
 <body>
 
@@ -403,9 +565,6 @@ footer{background:var(--moss);color:rgba(255,255,255,.5);text-align:center;font-
       </div>
     </div>
     <div class="sp sp2" aria-hidden="true"></div>
-      <div class="btns in-up" style="transition-delay:1.6s">
-        <a class="btn solid" href="#work">Featured projects</a>
-      </div>
       <div class="scroll in-up" style="transition-delay:1.9s"><a class="arrow" href="#work" aria-label="Scroll to featured projects"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v12M4 10l5 5 5-5"/></svg></a></div>
   </div>
 
@@ -489,64 +648,74 @@ const SITE = { email: "jennywang.work@gmail.com" };   // <- your email
 
 const PROJECTS = [
   { slug:"exponential-roadmap-initiative", title:"Exponential Roadmap Initiative", category:"Web Design", label:"Web Design · WordPress · Climate Communications", year:2024, place:"",
-    client:"Exponential Roadmap Initiative", role:"Web design, WordPress", img:"eri.webp", bg:"#DAEDEA",
+    client:"Exponential Roadmap Initiative", role:"Web design, WordPress", img:"eri.webp", bg:"#DCE8F2",
     desc:"A website redesign to show how the initiative brings companies together to accelerate climate action.",
     story:{
       name:"ERI Website Redesign",
       title:"Rebuilding ERI’s website around its climate work and resources",
       overview:"A full WordPress rebuild that introduced a new visual identity across the site and reorganised how visitors learn about ERI’s climate work and find practical resources.",
       factCols:"1.9fr .55fr .9fr 2.2fr",
-      facts:[{l:"Client",v:"Exponential Roadmap Initiative"},{l:"Year",v:"2024"},{l:"Platform",v:"WordPress"},{l:"My role",v:"Web Designer · WordPress Developer"}],
+      facts:[{l:"Organisation",v:"Exponential Roadmap Initiative"},{l:"Year",v:"2024"},{l:"Platform",v:"WordPress"},{l:"Project scope",v:"Site structure · Visual design · Implementation"}],
+      redesign:true,variant:'plan',challengeTitle:'Making ERI’s climate mission clear at a glance',
       roleSub:"Web Designer · WordPress Developer",
       roleItems:[
-        {l:"Website visual identity",t:"Developed the colour palette and banner system for the redesigned site."},
-        {l:"Information architecture",t:"Worked with my manager to define the site structure, including the homepage hierarchy and main navigation."},
-        {l:"Page design",t:"Designed layouts across the site, including a dedicated Resources hub organised around the pillars of ERI’s Business Playbook."},
-        {l:"Resource artwork",t:"Designed and created cover images for selected ERI resources."},
-        {l:"WordPress development",t:"Rebuilt every page in WordPress, implementing the new visual identity and layouts across the site."}
+        {l:"Website visual identity",t:"Defined the site’s colour palette and developed consistent styles for headings, buttons and banners."},
+        {l:"Information architecture",t:"Worked with the team to refine the homepage content hierarchy and reorganise the main navigation."},
+        {l:"Page design",t:"Designed page layouts and selected imagery across the site. Created a dedicated Resources hub organised around the pillars of ERI’s Business Playbook."},
+        {l:"Resource artwork",t:"Redesigned cover artwork for selected ERI resources."},
+        {l:"WordPress development",t:"Rebuilt every page in WordPress, implementing the new layouts and visual identity across the site."}
       ],
-      challenge:"The previous homepage brought different types of information together without a clear hierarchy, and its imagery did little to reflect ERI’s identity. Resources were spread across separate pages and linked from the main navigation, where their categories were difficult to distinguish. The redesign needed to give first-time visitors a clear overview of ERI’s work and help people with a specific resource in mind reach it directly.",
+      challenge:"The previous homepage presented several types of content with little visual hierarchy, making it difficult for first-time visitors to understand what ERI does. The imagery offered few cues about ERI’s identity, and the main navigation linked to separate resource pages without clearly distinguishing their categories.</p><p>The redesign had two goals: to give first-time visitors a clear overview of ERI’s work through a more focused homepage that better reflected its identity, and to give visitors looking for a specific resource a direct route to it through clearer navigation.",
       decisions:[
-        {h:"Build a consistent visual identity across the site",p:"I developed a new colour palette and banner system to give pages a consistent visual opening. I designed the layouts around the content and purpose of each page, then implemented the visual system across the site in WordPress."},
-        {h:"Give visitors a clear starting point",p:"My manager and I worked together on the site structure, including the homepage hierarchy and main navigation. We considered different menu structures and chose a simpler hierarchy that balanced visual clarity with what was feasible in WordPress. I designed and built the homepage to introduce ERI and its areas of work, with direct routes to key pages through the main navigation."},
+        {h:"Build a consistent visual identity across the site",p:"I developed a new colour palette and banner system to give pages a consistent visual opening. I designed the layouts around the content and purpose of each page, then implemented the visual system across the site in WordPress.",media:[{src:"eri/meet-the-team.webp",cap:"About page · Meet the team, using the new palette and consistent card styling.",media:[{src:"eri/meet-the-team.webp",cap:"Meet the team · A simple grey card with a green accent line, and portraits cut out from their original backgrounds to sit consistently within the site."}]}]},
+        {h:"Give visitors a clear starting point",p:"My manager and I worked together on the site structure, including the homepage hierarchy and main navigation. We considered different menu structures and chose a simpler hierarchy that balanced visual clarity with what was feasible in WordPress. I designed and built the homepage to introduce ERI and its areas of work, with direct routes to key pages through the main navigation.",media:[{src:"eri/top-nav.webp",cap:"Top navigation · The Resources menu groups materials under the four pillars of ERI’s Business Playbook."}]},
         {h:"Organise resources around the Business Playbook",p:"I designed and built a dedicated Resources hub that brings ERI’s materials together on a single page. The hub uses the pillars of ERI’s Business Playbook to group resources by area of work, so visitors can browse the collection and identify guidance that fits their current priorities."}
       ],
       outcomes:[
-        {b:"A full WordPress rebuild.",t:"Every page was rebuilt, with a new banner system, a new colour palette and layouts tailored to the content."},
-        {b:"A single-page introduction to ERI.",t:"The homepage brings together ERI’s role and areas of work, giving first-time visitors an overview in one place."},
-        {b:"Two ways to find resources.",t:"Visitors can use the main navigation to reach key resource pages directly or browse the full collection by Business Playbook pillar in the Resources hub."}
+        {big:"Design",t:"The homepage gives ERI’s mission a clear focal point. A shared banner system, colour palette and page styles give the site a consistent identity, while layouts are tailored to the content on each page."},
+        {big:"Technical implementation",t:"The WordPress rebuild put two paths to resources in place. Visitors can go directly to key pages from the mega menu or browse the full collection in the Resources hub."},
+        {big:"Organisational value",t:"The site gives ERI a clearer public introduction, makes its partnerships and ongoing work more visible, and helps visitors discover the tools and guidance the organisation provides."}
       ]
     } },
-  { slug:"t11-terminal", title:"T11 Terminal | 14th CSSA Stockholm Singles' Day", category:"Event", label:"Event Production &amp; Art Direction", sub:"CSSA Sweden · 130+ attendees", year:2026, place:"Homage, Stockholm",
-    client:"CSSA Sweden", role:"Event production, art direction", bg:"#DCE8F2", cover:true, coverImg:"t11/hero.webp",
+  { slug:"t11-terminal", title:"T11 Terminal | 14th CSSA Stockholm Singles' Day", category:"Event", label:"Event Production &amp; Art Direction", sub:"CSSA Sweden · 150+ attendees", year:2026, place:"Homage, Stockholm",
+    client:"CSSA Sweden", role:"Event production, art direction", bg:"#DCE8F2", cover:true, coverImg:"t11/hero.webp", heroImg:"t11/venue-aerial.webp",
     ink:"#fff", sh:0.2, pal:["#DCE8F2","#1260B0","#0A2373","#8DB7D5"],
-    desc:"An airport-terminal-themed singles party for more than 130 attendees, from concept and promotion to on-site delivery.",
+    desc:"An airport-terminal-themed singles party for more than 150 attendees, from concept and promotion to on-site delivery.",
     story:{
       name:"T11 Terminal · Stockholm Chinese Students and Scholars Singles Party",
       eye:"T11 Terminal | 14th CSSA Stockholm Singles' Day",
-      title:"A singles night with room for friendship",
-      overview:"An immersive, airport-themed social event that brought together more than 130 Chinese students and scholars in Stockholm and gave guests a natural way to starting a conversation through a shared storyline and team challenges at the gates.",
+      title:"A singles' night with room for friendship",
+      overview:"Terminal 11 was an immersive, airport-themed gathering that reimagined the traditional singles’ event as a playful, low-pressure way to meet new people. Guests checked in as passengers and teamed up at their assigned gates to solve a puzzle about a delayed flight. The shared challenge gave strangers a natural way to strike up a conversation and get to know one another at their own pace.",
       alt:"T11 Terminal event artwork",
-      facts:[{l:"Organiser",v:"CSSASE"},{l:"Date",v:"7 November 2026"},{l:"Location",v:"Homage, Stockholm"},{l:"My role",v:"Event Production Lead · Art Director · Co-host"},{l:"Attendees",v:"130+",big:1}],
-      challenge:"The 14th Stockholm Chinese Students and Scholars Singles' Day Party set out to give guests a relaxed way to meet new people, whether they were looking for friendship or romance. Observations from previous events, attendee feedback informed two priorities: giving strangers a natural way to start talking and helping them meet people beyond their initial groups. At this scale, the programme also needed to encourage everyone to actively participate in the evening.",
-      roleSub:"Event Production Lead · Art Director · Co-host",
+      facts:[{l:"Organiser",v:"CSSASE"},{l:"Date",v:"7 November 2026"},{l:"Location",v:"Homage, Stockholm"},{l:"Budget",v:"50,000 SEK"},{l:"Attendees",v:"150+",big:1}], factCols:"1fr 1.25fr 1.5fr 1.1fr .8fr",
+      challenge:"The challenge was to design a programme that made it easy for strangers to start talking, encouraged guests to meet people beyond their first group, and kept them involved throughout the evening without making participation feel forced.",
+      credits:{src:"CSSASE’s official WeChat account",photo:"Yufan Jiang and Yifeng Li"},
+      aboutSub:"An evening at Terminal 11",
+      about:["For one evening, we invited guests to step out of their daily routines and into Terminal 11. All they needed to bring was a little curiosity, the courage to say hello and an openness to whatever the evening might hold. Some came hoping to make new friends, others to see if there might be a spark.","In planning the 14th Stockholm Chinese Students and Scholars Singles’ Day Party, we drew on what we’d seen at past events and what guests had told us afterwards. We wanted to make that first conversation feel natural and give people reasons to keep mingling beyond the group they started with. At an event of this size, that meant building opportunities to join in throughout the evening, even for guests who might hesitate to make the first move.","At check-in, guests received boarding passes and stepped into a shared story as passengers. The games gave them something to talk about and do together. Later, we left time for people to pick up a conversation they’d enjoyed or take a chance on another hello."],
+      roleSub:"Event Production Lead · Art Director · Host",
       roleItems:[
-        {l:"Event production",t:"Led planning and on-site delivery, managed the budget, timeline and promotional plan, and ran planning meetings, staff recruitment and training for in-character volunteers."},
+        {l:"Event production",t:"Led planning and on-site delivery, managed the budget, timeline and promotional plan, contacted the venue and managed booking, ran planning meetings, staff recruitment and training for in-character volunteers."},
         {l:"Programme design",t:"Developed the storyline and game rules, drafted the running order, and refined the programme with the team."},
         {l:"Art direction",t:"Built on a teammate’s airport theme and teaser concept, guiding the visual direction and co-designing the poster, boarding passes, teaser and props."},
-        {l:"Live hosting",t:"Wrote the host scripts and co-hosted the event."}
+        {l:"Live hosting",t:"Wrote the host scripts and hosted the event."}
+      ],
+      stagesTitle:"The evening, <em>stage by stage</em>",
+      stages:[
+        {n:"Stage 1 · Before check-in",h:"The story began before anyone arrived.",p:"Three weeks before the event, we launched the Terminal 11 promotional campaign through our WeChat Official Account, RedNote (Xiaohongshu), and WeChat groups. The poster and teaser announced the event and set up the story. Dense fog had grounded flights at Terminal 11, and the flight route map was locked away.\n\nOver the next two weeks, we introduced our event partners and opened registration. By the time guests checked in, they already knew how the story began.",stats:[{big:"5,000+",t:"views across all platforms"},{big:"230+",t:"shares"}],kind:"before"},
+        {n:"Stage 2 · Check-in",h:"A boarding pass made each guest a passenger.",p:"At check-in, each guest received a boarding pass with a route, a flight number and an assigned gate. The pass shown here reads ARN → KRN, Gate 3. It told guests where to go first and gave them an easy opening line when they met someone new. “Which gate are you heading to?”",kind:"checkin"},
+        {n:"Stage 3 · At the gate",h:"A puzzle gave strangers something to talk about.",p:"At each gate, printed task sheets gave passengers a shared challenge. They read flight records, compared clues and worked together to solve the puzzle. A conversation could start with something as simple as pointing to a detail on the page and asking, “What do you make of this?” By the time they cracked the puzzle, people who had just met could share the satisfaction of having solved it as a team.",kind:"gate"},
+        {n:"Stage 4 · Departure",h:"One last moment with the boarding passes.",p:"The departure chart brought the story to a close. For the group photo, we asked everyone to hold up the boarding pass they’d received at check-in. The same card that had sent each guest to their first gate now appeared in a photo of the whole room. It was a small closing ritual that brought the evening back to where it began.",kind:"depart",noteH:"A real delay at Terminal 11",note:"The evening opened with a fictional delay, and then we had a real one. We started 15 minutes late. As the event planner and host, I had to decide on the spot where we could recover time while preserving the programme’s key moments, the flow of the story and the guest experience.\n\nWith more than 150 guests, I assessed how they were distributed across the gates, how much space each group had and which clues guests needed to follow the story into the next stage. The gate tasks offered the most flexibility, so I shortened the time allotted to them while keeping enough room for the other moments without interrupting the whole storyline. We kept the running order, made time for the departure chart and the boarding-pass photo, and finished on schedule."}
       ],
       decisions:[
-        {h:"A natural way into the conversation",p:"We designed the gate activities around groups of ten. A lateral-thinking puzzle and a round of Truth or Dare gave guests a shared starting point, with each person taking a turn to speak.",
-          media:[{src:"t11/gate.webp",cap:"Gate activity on the night"},{src:"t11/gate-flow.webp",cap:"Gate activity flow"}]},
+        {h:"A natural way into the conversation",p:"We designed the gate activities around groups of ten. A lateral-thinking puzzle and a round of Truth or Dare gave guests a shared starting point, with each person taking a turn to speak."},
         {h:"Give guests a reason to meet across groups",p:"A second puzzle was designed to ask guests to form new teams of three across flight routes. To solve it, they had to exchange clues, giving them a concrete reason to approach people outside their original groups.",
-          media:[{src:"t11/puzzle.webp",cap:"Cross-route team puzzle"}]}
+        }
       ],
-      outcomes:[
-        {big:"98%",t:"of respondents said they made a new friend at T11."}
-      ]
+      outcomes:[{big:"98%",t:"of respondents said they made a new friend at T11"},{big:"150+",t:"attendees across the evening"},{big:"On time",t:"finished as scheduled, despite a 15-minute late start"}]
     } },
 ];
+PROJECTS.forEach(p=>{if(p.slug==='t11-terminal')p.date='2026-11-07'});
+PROJECTS.sort((a,b)=>String(b.date||b.year).localeCompare(String(a.date||a.year)));
 const CATS=[...new Set(['All',...PROJECTS.map(p=>p.category),'Branding','Event'])];
 
 /* ════════════════ helpers ════════════════ */
@@ -585,7 +754,7 @@ function pic(p,v){
   const crop={0:'object-fit:contain',1:'object-fit:cover;object-position:0 25%;transform:scale(1.9);transform-origin:12% 30%',2:'object-fit:cover;object-position:100% 70%;transform:scale(2.2);transform-origin:90% 75%',3:'object-fit:cover;object-position:50% 40%;transform:scale(1.5);transform-origin:50% 45%'}[v];
   return `<img src="${p.img}" alt="" style="position:absolute;inset:0;width:100%;height:100%;${crop}">`;
 }
-function coverHTML(p){return `<img class="pimg" src="${p.coverImg}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">`}
+function coverHTML(p,hero){return `<img class="pimg" src="${hero&&p.heroImg?p.heroImg:p.coverImg}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">`}
 function mediaHTML(items){return `<div class="cs-media m${items.length}">`+items.map(m=>`<figure><img src="${m.src}" alt="${m.cap}" loading="lazy" onerror="this.parentNode.classList.add('miss')"><figcaption>${m.cap}</figcaption></figure>`).join('')+'</div>'}
 function face(p){
   if(p.cover) return `<div class="face" style="background:${p.bg}">${coverHTML(p)}</div>`;
@@ -631,9 +800,9 @@ let rz; addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(fixH1,150)
 function intro(){
   fixH1();
   document.body.classList.add('go');
-  const UL='<svg viewBox="0 0 100 12" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M1 8C28 2 72 2 99 7" stroke="#F4A89C" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>';
+  const UL='<svg viewBox="0 0 100 12" preserveAspectRatio="none" fill="none" aria-hidden="true"><path d="M1 8C28 2 72 2 99 7" stroke="#0A4F98" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>';
   const h=$('#h1');
-  h.innerHTML='<span class="ln2"><i style="--d:.35s">Designer of things</i></span><span class="ln2"><i style="--d:.55s">that <b class="gw">grow'+UL+'</b></i></span>';
+  h.innerHTML='<span class="ln2"><i style="--d:.35s">Designer of things</i></span><span class="ln2"><i style="--d:.55s"><span class="th">that</span> <b class="gw">grow'+UL+'</b></i></span>';
   const sv=$('#h1 .gw svg');
   setTimeout(()=>{sv.classList.add('on');h.classList.add('rose')},1750);
 }
@@ -730,13 +899,43 @@ const detail=$('#detail'), morph=$('#morph'), back=$('#back');
 let lastRect=null;
 
 function roleList(t){return (t.roleSub?`<p class="cs-sub">${t.roleSub}</p>`:'')+`<ul class="cs-list">${t.roleItems.map(x=>`<li><b>${x.l}</b><span>${x.t}</span></li>`).join('')}</ul>`}
+function fig(src,cap,cls){return `<figure${cls?` class="${cls}"`:''}><img src="${src}" alt="${cap}" loading="lazy" onerror="this.parentNode.classList.add('miss')"><figcaption>${cap}</figcaption></figure>`}
+function vid(src,poster,cap,cls){return `<figure class="${cls}"><video controls preload="metadata" playsinline poster="${poster}"><source src="${src}" type="video/mp4"></video><figcaption>${cap}</figcaption></figure>`}
+function stageMedia(st){
+  if(st.kind==='before') return `<div class="cs-media st st1">${fig('t11/poster.webp','Poster · Designer: Hangyi Zhao','poster')}${vid('t11/teaser.mp4','t11/teaser-poster.jpg','Teaser video · Designer and editor: Kaiwen Huang','teaser')}${fig('t11/host-briefing.webp','Host briefing at the terminal','venue')}</div>`;
+  if(st.kind==='checkin') return `<div class="cs-media st st2">${fig('t11/boarding-pass.webp','Boarding pass')}${fig('t11/checkin-passes.webp','Printed passes at the check-in desk')}</div>`;
+  if(st.kind==='gate') return `<div class="cs-media st st3">${fig('t11/flight-record.webp','Flight record','rec')}${fig('t11/lateral-puzzle.webp','Lateral-thinking puzzle','pz')}${fig('t11/route-unlocked.webp','Route unlocked! The on-screen animation marked the moment, and the team received passport holders designed by CSSASE.','ul')}${fig('t11/gate-table.webp','A gate table on the night','gt')}</div>`;
+  return `<div class="cs-media st st4">${fig('t11/group-photo.webp','Final group photo: everyone holding up their own boarding pass','grp')}<aside class="cs-note flag"><span class="flag-t"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 1.5v13M3 2.5h9l-2 3 2 3H3" fill="currentColor" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>Unexpected change</span><h3>${st.noteH}</h3>${st.note.split('\n\n').map(x=>`<p>${x}</p>`).join('')}</aside>${fig('t11/departure.webp','Departure map · Designer: Kaiwen Huang','dep')}</div>`;
+}
+function redesignHTML(t,cmp){
+  const frame=(src,alt,lab)=>`<div class="cmp-bw rd-shot rd-fp"><div class="cmp-bar"><i></i><i></i><i></i><span>${lab}</span></div><img src="${src}" alt="${alt}" loading="lazy"></div>`;
+  const Y=[['2024','eri/banner-2024.webp','Today. A clear mission statement on a green gradient, with member logos below.'],['2023','eri/banner-2023.webp','A full-bleed forest photograph with a large headline.']];
+  const rail=`<div class="rail in-fig" id="rdRail">${Y.map(y=>`<figure class="rail-i"><div class="cmp-bw"><div class="cmp-bar"><i></i><i></i><i></i><span>exponentialroadmap.org</span><b class="rail-y">${y[0]}</b></div><img src="${y[1]}" alt="ERI homepage banner, ${y[0]}" loading="lazy"></div><figcaption>${y[2]}</figcaption></figure>`).join('')}</div>`;
+  const blocks=`<div class="rd-blk"><div class="rd-txt"><span class="rd-n">01</span><h3>The homepage banner</h3><p>The redesigned banner makes ERI’s mission the first thing visitors read. A simpler layout gives the mission statement room to stand on its own, while the imagery and a light, vibrant ERI green establish the organisation’s visual identity from the first screen.</p><p class="rd-hint">Drag the divider to compare the 2023 and 2024 banners.</p></div><div class="rd-fig"><div class="rd-cmp-wrap rd-fp"><div class="cmp-bw rd-cmp"><div class="cmp-bar"><i></i><i></i><i></i><span>exponentialroadmap.org</span></div><div class="cmp-v"><img class="c1" alt="ERI homepage banner, 2023"><img class="c2" alt="ERI homepage banner, 2024"><div class="cmp-h"></div></div></div><div class="rd-cmp-lab"><span class="cmp-l a"></span><span class="cmp-l b"></span></div></div></div></div>
+  <div class="rd-blk"><div class="rd-txt"><span class="rd-n">02</span><h3>The main navigation</h3><p>As ERI’s resource collection grew, the original dropdown became harder to scan. I introduced a mega menu that groups resources under four areas of ERI’s work, giving visitors a clear view of the categories and access to key resource pages in one or two clicks. The Resources label also links directly to the hub for visitors who want to browse the full collection.</p></div><div class="rd-fig">${frame('eri/top-nav.webp','ERI main navigation with the Resources menu open, grouped by the four Business Playbook pillars','Top navigation · Resources menu')}</div></div>
+  <div class="rd-blk"><div class="rd-txt"><span class="rd-n">03</span><h3>A clearer homepage</h3><p>The homepage now follows a clearer content hierarchy. It first introduces ERI and its work, then shows who it works with and builds credibility through partner testimonials. The Latest News section highlights recent work, and the footer gives visitors clear ways to contact ERI as well as follow its work and interact on social media.</p><button class="rd-open" data-full="eri/home-full.jpg" data-t="Homepage">View full homepage →</button></div><div class="rd-fig">${frame('eri/home-top.webp','ERI redesigned homepage: opening banner, member logos, Who we are and What we do','exponentialroadmap.org')}</div></div>
+  <div class="rd-blk"><div class="rd-txt"><span class="rd-n">04</span><h3>A dedicated Resources hub</h3><p>The Resources hub brings the collection together around the five pillars of ERI’s Business Playbook. Each pillar uses the same colour in the framework overview and its corresponding expandable section. Visitors can understand how the framework is structured, then browse the resources grouped under each topic.</p><button class="rd-open" data-full="eri/resources-full.jpg" data-t="Resources page">View full Resources page →</button></div><div class="rd-fig">${frame('eri/res-framework.webp','The five-pillar Business Playbook framework, shown in five colours','Resources · Framework overview')}${frame('eri/res-accordion.webp','Expandable pillar categories in the same five colours','Resources · Categories')}</div></div>`;
+  const head=`<h2><span class="rd-sand">The <span class="rd-pk">redesigned</span> website</span></h2><p class="rd-lead">Visitors arrive with two questions in mind. Who is ERI and what does it do? What resources are available and where can I find them?</p>`;
+  const out=`<section class="rd navy rd-strip"><div class="rd-in"><section class="cs-sec"><h2>Project <em>outcome</em></h2><p class="rd-lead" style="margin-bottom:56px">I rebuilt every page in WordPress, carrying the redesign from the homepage and navigation through to individual content and resource pages.</p><div class="cs-strip">${t.outcomes.map(o=>`<div><strong>${o.big}</strong><span>${o.t}</span></div>`).join('')}</div></section></div></section>`;
+  return `<section class="rd navy"><div class="rd-in">${head}${blocks}</div></section>${out}`;
+}
+function initRd(root){
+  const R=root.querySelector('#rdRail'),M=root.querySelector('#rdMore');if(R&&M)M.onclick=()=>R.scrollBy({left:R.clientWidth*.55,behavior:'smooth'});
+  root.querySelectorAll('.rd-open').forEach(b=>b.onclick=()=>{let m=document.getElementById('rdModal');if(!m){m=document.createElement('div');m.id='rdModal';m.innerHTML='<div class="rdm-bar"><span></span><button aria-label="Close">Close ✕</button></div><div class="rdm-body"><img alt=""></div>';document.body.appendChild(m);m.querySelector('button').onclick=()=>m.classList.remove('on');m.addEventListener('click',e=>{if(e.target===m||e.target.classList.contains('rdm-body'))m.classList.remove('on')});document.addEventListener('keydown',e=>{if(e.key==='Escape')m.classList.remove('on')})}m.querySelector('img').src=b.dataset.full;m.querySelector('img').alt='ERI '+b.dataset.t+', full page';m.querySelector('span').textContent=b.dataset.t+' · full page';m.classList.add('on');m.querySelector('.rdm-body').scrollTop=0})
+}
 function storyHTML(p){
   const t=p.story, paras=x=>x.split('\n\n').map(q=>`<p>${q}</p>`).join('');
-  const shot=p.cover?`<div class="cs-shot cover"><div class="cs-cover">${coverHTML(p)}</div></div>`
+  const shot=p.cover?`<div class="cs-shot cover"><div class="cs-cover">${coverHTML(p,1)}</div></div>`
     :`<div class="cs-shot"><img src="${p.img}" alt="${t.name}: the redesigned ERI website shown on desktop, tablet and mobile"></div>`;
-  const facts=t.facts?`<div class="cs-facts"${t.factCols?` style="--cols:${t.factCols}"`:''}>${t.facts.map(f=>`<div><label>${f.l}</label><strong${f.big?' class="big"':''}>${f.v}</strong></div>`).join('')}</div>`:'';
+  const facts=t.facts?`<div class="cs-facts"${t.factCols||t.pageBg?` style="${t.factCols?`--cols:${t.factCols};`:''}${t.pageBg?'background:#FDF3E6;border:1px solid rgba(10,35,115,.14);':''}"`:''}>${t.facts.map(f=>`<div><label>${f.l}</label><strong${f.big?' class="big"':''}>${f.v}</strong></div>`).join('')}</div>`:'';
   const role=t.facts?`<section class="cs-sec"><h2>My <em>role</em></h2>${t.roleItems?roleList(t):paras(t.role)}</section>`:'';
-  const chal=`<section class="cs-sec"><h2>The challenge</h2><p>${t.challenge}</p></section>`;
+  const stages=t.stages?`<section class="cs-stages"><h2>${t.stagesTitle}</h2>${t.stages.map(st=>`<div class="stg"><div class="stg-h"><span>${st.n}</span><h3>${st.h}</h3><div class="stg-p">${st.p.split('\n\n').map(x=>`<p>${x}</p>`).join('')}</div>${st.stats?`<div class="stg-stats">${st.stats.map(o=>`<div><strong>${o.big}</strong><span>${o.t}</span></div>`).join('')}</div>`:''}</div>${stageMedia(st)}</div>`).join('')}</section>`:'';
+  const decs=(ttl)=>`<section class="cs-sec"><h2>${ttl||'Key <em>decisions</em>'}</h2><div class="cs-dec">${t.decisions.map((d,i)=>`<div><span class="n">0${i+1}</span><h3>${d.h}</h3><p>${d.p}</p>${d.media?mediaHTML(d.media):''}</div>`).join('')}</div></section>`;
+  const outc=()=>t.outcomes.every(o=>o.big)&&t.outcomes.length>1?`<section class="cs-sec"><h2>Outcome</h2><div class="cs-strip">${t.outcomes.map(o=>`<div><strong>${o.big}</strong><span>${o.t}</span></div>`).join('')}</div></section>`:`<section class="cs-sec"><h2>${t.outcomes.length>1?'Outcomes':'Outcome'}</h2><div class="cs-out${t.outcomes.length===1?' one':''}">${t.outcomes.map(o=>o.big?`<div class="stat"><strong>${o.big}</strong><span>${o.t}</span></div>`:`<div><b>${o.b}</b><span>${o.t}</span></div>`).join('')}</div></section>`;
+  const about=t.about?`<section class="cs-sec"><h2>About the <em>event</em></h2><p class="cs-sub">${t.aboutSub}</p>${t.about.map(x=>`<p>${x}</p>`).join('')}</section>`:'';
+  const chal=`<section class="cs-sec"><h2>${t.challengeTitle||'The challenge'}</h2><p>${t.challenge}</p></section>`;
+  const YRS=['2020','2023','2024'];
+  const cmp=t.compare?`<section class="cmp"><h2>The homepage, <em>before and after</em></h2><p class="cmp-sub">Drag the divider to compare the homepage banner across versions, or choose which two years to compare.</p><div class="cmp-pills"><span>Left</span><span class="cmp-pl">${YRS.map((y,k)=>`<button class="cmp-pill" data-s="L" data-k="${k}">${y}</button>`).join(' ')}</span><span style="margin-left:14px">Right</span><span class="cmp-pr">${YRS.map((y,k)=>`<button class="cmp-pill" data-s="R" data-k="${k}">${y}</button>`).join(' ')}</span></div><div class="cmp-bw"><div class="cmp-bar"><i></i><i></i><i></i><span>exponentialroadmap.org</span></div><div class="cmp-v"><img class="c1" alt="ERI homepage banner, left version"><img class="c2" alt="ERI homepage banner, right version"><div class="cmp-h"></div><div class="cmp-l a"></div><div class="cmp-l b"></div></div></div></section>`:'';
   return `<section class="cs-hero" style="background:${p.bg}"><div class="cs-in">
       <div class="cs-eye"><i></i>${t.eye||t.name+' · '+p.year}</div>
       <h1 class="cs-title">${t.title}</h1>
@@ -745,17 +944,27 @@ function storyHTML(p){
     <div class="cs-body">
       ${facts}
       ${t.facts?'':`<div class="cs-role${t.roleItems?' list':''}"><h2>My role</h2>${t.roleItems?`<div>${roleList(t)}</div>`:`<p>${t.role}</p>`}</div>`}
-      ${chal}${role}
-      <section class="cs-sec"><h2>Key <em>decisions</em></h2><div class="cs-dec">${t.decisions.map((d,i)=>`<div><span class="n">0${i+1}</span><h3>${d.h}</h3><p>${d.p}</p>${d.media?mediaHTML(d.media):''}</div>`).join('')}</div></section>
-      <section class="cs-sec"><h2>${t.outcomes.length>1?'Outcomes':'Outcome'}</h2><div class="cs-out${t.outcomes.length===1?' one':''}">${t.outcomes.map(o=>o.big?`<div class="stat"><strong>${o.big}</strong><span>${o.t}</span></div>`:`<div><b>${o.b}</b><span>${o.t}</span></div>`).join('')}</div></section>
-    </div>`;
+      ${t.facts?'':chal+role}
+    </div>
+    ${t.about?`<div class="cs-pair">${about}${role}</div>`:(t.facts?`<div class="cs-pair">${chal}${role}</div>`:'')}
+    ${stages}
+    ${t.redesign?redesignHTML(t,cmp):cmp}
+    ${t.about?`<div class="cs-band"><div class="cs-pair cs-pair2">${chal}${decs('Solutions')}</div><div class="cs-outw">${outc()}</div>${t.credits?`<div class="cs-credits"><h4>Photo credits</h4><p>Source: ${t.credits.src}</p><p>Photography: ${t.credits.photo}</p></div>`:''}</div>`:''}
+    ${t.about||t.redesign?'':`<div class="cs-band"><div class="cs-pair cs-pair2 solo">${decs()}</div><div class="cs-outw">${outc()}</div></div>`}`;
 }
+function initCmp(root){const V=root.querySelector('.cmp-v');if(!V)return;const i1=V.querySelector('.c1'),i2=V.querySelector('.c2'),H=V.querySelector('.cmp-h'),la=root.querySelector('.cmp-l.a'),lb=root.querySelector('.cmp-l.b');const S=['eri/banner-2023.webp','eri/banner-2024.webp'],Yr=['2023','2024'];let L=0,R=1;
+function draw(){i1.src=S[L];i2.src=S[R];la.textContent=Yr[L];lb.textContent=Yr[R];root.querySelectorAll('.cmp-pill').forEach(b=>b.classList.toggle("sel",+b.dataset.k===(b.dataset.s==='L'?L:R)))}
+function set(x){const r=V.getBoundingClientRect(),p=Math.min(1,Math.max(0,(x-r.left)/r.width));H.style.left=p*100+'%';i2.style.clipPath='inset(0 0 0 '+p*100+'%)'}
+root.querySelectorAll('.cmp-pill').forEach(b=>b.onclick=()=>{b.dataset.s==='L'?L=+b.dataset.k:R=+b.dataset.k;draw()});
+let d=0;V.addEventListener('pointerdown',e=>{d=1;V.setPointerCapture(e.pointerId);set(e.clientX)});V.addEventListener('pointermove',e=>{if(d)set(e.clientX)});V.addEventListener('pointerup',()=>d=0);
+draw();set(V.getBoundingClientRect().left+V.getBoundingClientRect().width*.5);
+let nd=0;new IntersectionObserver((es,o)=>{if(es[0].isIntersecting&&!nd){nd=1;let t0=null;const f=ts=>{t0=t0||ts;const k=(ts-t0)/1800,r=V.getBoundingClientRect();if(k<1){set(r.left+(.5+Math.sin(k*Math.PI*2)*.12)*r.width);requestAnimationFrame(f)}else set(r.left+r.width*.5)};requestAnimationFrame(f)}if(!es[0].isIntersecting)nd=0},{root:document.querySelector('#detail'),threshold:.6}).observe(V)}
 function openDetail(p,el){
   cl.classList.remove('on');
   const r=el.getBoundingClientRect(); lastRect=r;
   morph.style.background=p.bg||''; morph.innerHTML=p.cover?coverHTML(p):p.img?pic(p,0):art(p);
   Object.assign(morph.style,{display:'block',transition:'none',left:r.left+'px',top:r.top+'px',width:r.width+'px',height:r.height+'px',borderRadius:'8px'});
-  const story=!!p.story; $('#dhero').style.display=story?'none':''; document.querySelector('.d-body').style.display=story?'none':''; const ds=$('#dstory'); ds.style.display=story?'block':'none'; if(story){ds.innerHTML=storyHTML(p)}
+  const story=!!p.story; $('#dhero').style.display=story?'none':''; document.querySelector('.d-body').style.display=story?'none':''; const ds=$('#dstory'); ds.style.display=story?'block':'none'; if(story){detail.style.background=p.story.pageBg||'';ds.innerHTML=storyHTML(p);initCmp(ds);initRd(ds);const fio=new IntersectionObserver(es=>es.forEach(e=>{e.target.classList.toggle('in',e.isIntersecting)}),{root:detail,threshold:[0,.12]});ds.querySelectorAll('.cs-media figure,.rd-fp').forEach(f=>fio.observe(f))}
   $('#dhero').classList.toggle('light',!!p.img); $('#dhero').style.background=p.bg||''; $('#dart').style.background=''; $('#dart').innerHTML=p.img?pic(p,0):art(p,1).replace('class="art"','class="art" style="position:absolute;inset:0;width:100%;height:100%"');
   $('#deye').textContent=`${p.label||p.category}  ·  ${p.year}`;
   $('#dtitle').textContent=p.title;
@@ -790,6 +999,11 @@ $('#copy').onclick=async e=>{
   try{await navigator.clipboard.writeText(SITE.email);e.target.textContent='Copied ✓'}catch(_){e.target.textContent='Select & copy'}
   setTimeout(()=>e.target.textContent='Copy',1800);
 };
+</script>
+<script>
+(function(){var h=document.querySelector('.hero');if(!h||matchMedia('(pointer:coarse)').matches)return;
+h.addEventListener('pointermove',function(e){var r=h.getBoundingClientRect();h.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5)*2);h.style.setProperty('--my',((e.clientY-r.top)/r.height-.5)*2)});
+h.addEventListener('pointerleave',function(){h.style.setProperty('--mx',0);h.style.setProperty('--my',0)})})();
 </script>
 </body>
 </html>
